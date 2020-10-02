@@ -238,7 +238,7 @@ An \emph{atomic $n$-type} of $\tau$ is a set $\Phi$ of literals of $\tau$ in var
 If $\mathcal{L}$ is a logic, $\Phi$ an atomic type and there is an $\mathcal{L}$-formula $t$ logically equivalent to $\bigwedge \Phi$, then $t$ is also called an atomic type.
 
 
-\begin{lemma}\label{quant}
+\begin{lemma}\label{atomic_types}
 Let $\vartheta$ be a quantifier-free $\tau$-formula in $n$ free variables.
 Then there exists a set $T$ of atomic $n$-types of $\tau$ such that
 \[
@@ -264,12 +264,12 @@ for all $R\in\sigma$.
 Let $C \subseteq \Str[\sigma]$ be a class of structures closed under isomorphism.
 The logic $\mathcal{L}_{\kappa\omega}(Q_C)$ is the smallest extension of $\mathcal{L}_{\kappa\omega}$ closed under negation, conjunctions and disjunctions of cardinality $<\kappa$ and application of the existential quantifier $\exists$ such that  for all
 $\mathcal{L}_{\kappa\omega}(Q_C)$-interpretations $(\Psi,(\psi_R)_{R\in \sigma})$ there is a $\mathcal{L}_{\kappa\omega}(Q_C)[\tau]$-formula $\chi$ such that
-\begin{equation}\label{clever}
+\begin{equation}\label{gen_quant_formula}
 	\mathfrak{A} \vDash \chi \Leftrightarrow \Psi(\mathfrak{A})\in C
 \end{equation}
 for all $\mathfrak{A} \in \Str[\tau]$.
 In a similar way we define the logics $\mathcal{L}_{\infty \omega}(Q_C)$ and $\mathcal{L}^{\omega}_{\infty\omega}(Q_C)$.
-We say that $Q_C$ is the \emph{generalized quantifier} corresponding to the class $C$, and write $Q_C(\overline{x}_R\psi_R)_{R\in\sigma}$ for the formula $\chi$ in \eqref{clever}.
+We say that $Q_C$ is the \emph{generalized quantifier} corresponding to the class $C$, and write $Q_C(\overline{x}_R\psi_R)_{R\in\sigma}$ for the formula $\chi$ in \eqref{gen_quant_formula}.
 The class $C$ is called the \emph{defining class} of $Q_C$, and $\sigma$ the \emph{vocabulary} of $Q$.
 Sometimes we denote a quantifier just by the symbol $Q$, its defining class by $K_Q$, and the vocabulary of $Q$ by $\tau_Q$.
 We say that $|\tau_Q|$ is the \emph{width} of $Q$.
@@ -289,7 +289,7 @@ for all $\mathfrak{A} \in \Str[\tau]$ and tuples $\overline{a}$ of elements in $
 Replace all atomic subformulas $R(\overline{x})$ of $\varphi$ with formulas $\psi_R(\overline{x})$ to get $\varphi^*$. 
 \end{proof}
 
-\begin{lemma}\label{possibly_empty}
+\begin{lemma}\label{prel_lemma}
 Let $\mathcal{Q}_0$ be a possibly empty class of quantifiers, $\kappa$ an infinite cardinal and $\mathcal{L} = \mathcal{L}_{\kappa \omega}(\mathcal{Q}_0)$ or $\mathcal{L} = \mathcal{L}^{\omega}_{\infty\omega}(\mathcal{Q}_0)$.
 Suppose $\mathcal{Q}_1$ is a class of quantifiers such that for every $Q\in\mathcal{Q}_1$ its defining class $\mathcal{K}_Q$ is definable in $\mathcal{L}$.
 Then $\mathcal{L}(\mathcal{Q}_1) \equiv \mathcal{L}$.
@@ -429,7 +429,7 @@ For the other direction, if $\mathfrak{A}\in K$ then $F(\mathfrak{A}) \in K'$ so
 	(A,(R^{\mathfrak{A}})_{R\in\tau},(\neg R^{\mathfrak{A}})_{R\in\tau},(x\ne y)^{\mathfrak{A}}) \in K'
 \]
 from which it follows that $\mathfrak{A} \vDash \psi$.
-Thus, $K$ is definable in $\mathcal{L}(\mathcal{Q}_{\hom})$ so by Lemma \ref{possibly_empty} we have $\mathcal{L}(\mathcal{Q}_{\emb}) \leq \mathcal{L}(\mathcal{Q}_{\hom})$, and since every homomorphism-closed quantifier is also embedding-closed we have  $\mathcal{L}(\mathcal{Q}_{\emb}) \equiv \mathcal{L}(\mathcal{Q}_{\hom})$.
+Thus, $K$ is definable in $\mathcal{L}(\mathcal{Q}_{\hom})$ so by Lemma \ref{prel_lemma} we have $\mathcal{L}(\mathcal{Q}_{\emb}) \leq \mathcal{L}(\mathcal{Q}_{\hom})$, and since every homomorphism-closed quantifier is also embedding-closed we have  $\mathcal{L}(\mathcal{Q}_{\emb}) \equiv \mathcal{L}(\mathcal{Q}_{\hom})$.
 \end{proof}
 
 
@@ -638,7 +638,7 @@ For each $i < \omega$, let
 \[
 	T_i = \{t \colon t \text{ is an atomic type and } (\mathfrak{A}_i,\overline{a}) \vDash \varphi \wedge  t \text{ for some } \overline{a} \}.
 \]
-Since all $\mathfrak{A}_i$ are quasi-homogeneous, it follows from Theorem \ref{homog} and Lemma \ref{quant} that 
+Since all $\mathfrak{A}_i$ are quasi-homogeneous, it follows from Theorem \ref{homog} and Lemma \ref{atomic_types} that 
 \[
 	\mathfrak{A}_i \vDash \forall \overline{x}(\varphi \leftrightarrow \bigvee T_i).
 \]
@@ -846,7 +846,7 @@ Let $\varphi$ be a sentence of some logic.
 We say that a structure $\mathfrak{A}\in\mathcal{K}$ \emph{stabilizes $\varphi$ in $\mathcal{K}$} if for all $\mathfrak{B} \in \mathcal{K}$ such that $\mathfrak{A}\leq\mathfrak{B}$ we have $\mathfrak{A} \vDash \varphi \Leftrightarrow \mathfrak{B} \vDash \varphi$.
 \end{definition}
 
-\begin{lemma}\label{something}
+\begin{lemma}\label{stabil}
 Let $\tau$ be a finite relational vocabulary,
 $\mathcal{Q}$ a finite set of embedding-closed quantifiers of finite width,
 and $\varphi \in \mathcal{L}_{\infty\omega}^{\omega}(\mathcal{Q})[\tau]$ a sentence.
@@ -870,7 +870,7 @@ Let $\tau$ be a finite relational vocabulary and $\mathcal{H}$ the class of all 
 \end{theorem}
 \begin{proof}
 Let $\mathcal{H}' = \mathcal{H} \cap V_{\omega}$ where $V_{\omega}$ is the $\omega$-th level in the cumulative hierarchy of sets.
-Then, since $V_{\omega}$ is the set of all hereditarily finite sets, $\mathcal{H}'$ is a set such that for every $\mathfrak{A} \in \mathcal{H}$ there is $\mathfrak{A}' \in \mathcal{H}'$ isomorphic to $\mathfrak{A}$ so by Lemma \ref{something} there is a choice function $F\colon \mathcal{P}(\mathcal{H}') \rightarrow \mathcal{H}'$ such that 
+Then, since $V_{\omega}$ is the set of all hereditarily finite sets, $\mathcal{H}'$ is a set such that for every $\mathfrak{A} \in \mathcal{H}$ there is $\mathfrak{A}' \in \mathcal{H}'$ isomorphic to $\mathfrak{A}$ so by Lemma \ref{stabil} there is a choice function $F\colon \mathcal{P}(\mathcal{H}') \rightarrow \mathcal{H}'$ such that 
 for all $T \subseteq \mathcal{H}'$, $S \ne \emptyset$, $F(T)$ stabilizes $\varphi$ in $T$ and $F(\emptyset) = \emptyset$.
 Now for all $i < \omega$ we define sets $\mathcal{H}_i \subseteq \mathcal{H}$ and $\tau$-structures $\mathfrak{A}_i$ by setting $\mathcal{H}_0 = \mathcal{H}'$,
 $\mathfrak{A}_i = F(\mathcal{H}_i)$ and
@@ -1145,7 +1145,7 @@ Thus, Duplicator loses in the second round so $E_0 \not \equiv_{\emb}^2 E_1$.
 \end{example}
 
 We are going to use the embedding game in order to prove the following theorem:
-\begin{theorem}\label{for_each}
+\begin{theorem}\label{main}
 For each $n<\omega$, there is a first-order sentence $\varphi_n$ of quantifier rank $n$ satisfying the following:
 \begin{enumerate}
 	\item The sentence $\varphi_n$ is not expressible by any $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-sentence of quantifier rank less than $n$.
@@ -1186,238 +1186,201 @@ Every open segment of $\eta$ is isomorphic to $\eta$.
 In the text of this construction we will assume that all structures are disjoint unless mentioned otherwise.
 For every natural number $n \geq 1$, we define vocabularies
 \[
-	\tau_n = \{P_0,\dots,P_n,\leq,E_1,\dots,E_n\}
+\tau_n = \{P_0,\dots,P_n,\leq,E_1,\dots,E_n\}
 \] 
-where all $P_i$ are unary and $E_i$, $\leq$ binary relation symbols, and 
-\[
-	\tau_n^* = \tau_n \cup \{C_1,\dots,C_n\}
-\]
-where all $C_i$ are unary relation symbols.
-Our aim is to define classes $S_n, T_n \subset \Str[\tau_n^*]$ such that $(\mathfrak{A} \upharpoonright \tau_n) \equiv_{\emb}^n (\mathfrak{B} \upharpoonright \tau_n)$ but 
-$(\mathfrak{A} \upharpoonright \tau_n) \not \equiv_{\mathcal{L}_{\omega\omega}}^{n+1} (\mathfrak{B} \upharpoonright \tau_n)$ for all $\mathfrak{A} \in S_n$ and $\mathfrak{B} \in T_n$.
+where all $P_i$ are unary and $E_i$, $\leq$ binary relation symbols.
+Our aim is to define classes $S_n, T_n \subset \Str[\tau_n]$ such that $\mathfrak{A} \equiv_{\emb}^n \mathfrak{B}$ but 
+$\mathfrak{A} \not \equiv_{\mathcal{L}_{\omega\omega}}^{n+1} \mathfrak{B}$ for all $\mathfrak{A} \in S_n$ and $\mathfrak{B} \in T_n$.
 
 $\textbf{n = 1:}$
-First we define class $R_1 \subset \Str[\tau_1^*]$ by setting $\mathfrak{A} \in R_1$ if and only if there are disjoint structures $\mathfrak{B}_0$, $\mathfrak{B}_1 \in \Str[\{\leq\}]$ isomorphic to $\eta$ such that 
+First we define class $R_1 \subset \Str[\tau_1]$ by setting $\mathfrak{A} \in R_1$ if and only if there are disjoint structures $\mathfrak{B}_0$, $\mathfrak{B}_1 \in \Str[\{\leq\}]$ isomorphic to $\eta$ such that 
 $\mathfrak{A} \upharpoonright \{\leq\} = \mathfrak{B}_0 \cup \mathfrak{B}_1$ and 
 $P_i^{\mathfrak{A}} = B_i$ for $i = 0,1$.
 In what follows, we will use $\eta^{\mathfrak{A}}_i$ to denote $\mathfrak{B}_i$ for $i = 0,1$. Note that $\eta_i^{\mathfrak{A}} = (\mathfrak{A} \upharpoonright \{\leq\}) | P_i^{\mathfrak{A}}$.
 Finally we set
 \[
-	S_1 = \{\mathfrak{A}\in R_1 \colon E_1^{\mathfrak{A}} \text{ is an isomorphism between } \eta^{\mathfrak{A}}_1 \text{ and } \eta^{\mathfrak{A}}_0 \}
+S_1 = \{\mathfrak{A}\in R_1 \colon E_1^{\mathfrak{A}} \text{ is an isomorphism between } \eta^{\mathfrak{A}}_1 \text{ and } \eta^{\mathfrak{A}}_0 \}
 \]
 and
 \begin{align*}
-	T_1 = \{\mathfrak{B}\in R_1 \colon &\  C_1^{\mathfrak{B}} = \{a\} \text{ for some } a \in P^{\mathfrak{B}}_1 \text{ and } \\
-	& \text{ there is an isomorphism } h \text{ between }\\ &\ \eta^{\mathfrak{B}}_1 \text{ and }\eta^{\mathfrak{B}}_0 \text{ such that } E_1^{\mathfrak{B}} = h \setminus \{(a,h(a))\}.
+T_1 = \{\mathfrak{B}\in R_1 \colon &\ \text{There is } a \in P^{\mathfrak{B}}_1 \text{ and an isomorphism } h \text{ between }\\ &\ \eta^{\mathfrak{B}}_1 \text{ and }\eta^{\mathfrak{B}}_0 \text{ such that } E_1^{\mathfrak{B}} = h \setminus \{(a,h(a))\}.
 \end{align*}
 
 \begin{figure}
 	\centering
-	\includegraphics[scale = 0.8]{figs/figure1}
+	\includegraphics[scale = 0.4]{figs/figure1}
 	\caption{Classes $S_1$ and $T_1$}
 	\label{fig1}
-\end{figure} 
+\end{figure}
 
-$\textbf{n > 1:}$ We define class $R_n \subset \Str[\tau_n^*]$ by setting $\mathfrak{A} \in R_n$ if and only if there is $\mathfrak{B} \in \Str[\{\leq\}]$ isomorphic to $\eta$ and structures $\mathfrak{M}_a \in \Str[\tau^*_{n-1}]$ for each $a \in B$ such that
+$\textbf{n > 1:}$ We define class $R_n \subset \Str[\tau_n]$ by setting $\mathfrak{A} \in R_n$ if and only if there is $\mathfrak{B} \in \Str[\{\leq\}]$ isomorphic to $\eta$ and structures $\mathfrak{M}_a \in \Str[\tau_{n-1}]$ for each $a \in B$ such that
 \[
-	\mathfrak{A} \upharpoonright \tau^*_{n-1}  = \mathfrak{B} \cup \bigcup_{a \in B}\mathfrak{M}_a,
+\mathfrak{A} \upharpoonright \tau_{n-1}  = \mathfrak{B} \cup \bigcup_{a \in B}\mathfrak{M}_a,
 \] 
-$P_n^{\mathfrak{A}} = B$, $C_n^{\mathfrak{A}} = \{a\}$ for some $a \in P_n^{\mathfrak{A}}$, and
+$P_n^{\mathfrak{A}} = B$, and
 \[
-	E_n^{\mathfrak{A}} = \{(x,y) \in A^2 \colon x \in P_n^{\mathfrak{A}} \text{ and } y \in M_x \}.
+E_n^{\mathfrak{A}} = \{(x,y) \in A^2 \colon x \in P_n^{\mathfrak{A}} \text{ and } y \in M_x \}.
 \]
-If $n$ is even, then we set $\mathfrak{A}\in S_n$ if and only if $\mathfrak{A} \in R_n$ and for all $a\in P^{\mathfrak{A}}_n$,
-\begin{align*}
-	\mathfrak{M}_a \in T_{n-1} &\text{ if } a \notin C^{\mathfrak{A}}_n,\\
-	\mathfrak{M}_a \in S_{n-1} &\text{ if } a \in C^{\mathfrak{A}}_n,
-\end{align*}
-and $\mathfrak{A} \in T_n$ if and only if $\mathfrak{A} \in R_n$ and for all $a \in P_n^{\mathfrak{A}}$ we have
-$\mathfrak{M}_a \in T_{n-1}$.
-If $n$ is odd, then we set $\mathfrak{A} \in S_n$ if and only if $\mathfrak{A} \in R_n$ and for all $a \in P^{\mathfrak{A}}_n$ we have $\mathfrak{M}_a \in S_{n-1}$, and $\mathfrak{A} \in T_n$ if and only if $\mathfrak{A} \in R_n$ and for all $a \in P^{\mathfrak{A}}_a$,
-\begin{align*}
-	\mathfrak{M}_a \in S_{n-1} &\text{ if } a \notin C^{\mathfrak{A}}_n,\\
-	\mathfrak{M}_a \in T_{n-1} &\text{ if } a \in C^{\mathfrak{A}}_n.
-\end{align*}
+Then we define classes $S_n$, $T_n$ by setting $\mathfrak{A} \in S_n$ if and only if $\mathfrak{A} \in R_n$ and for all $a \in P_n^{\mathfrak{A}}$ we have $\mathfrak{M}_a \in T_{n-1}$, and $\mathfrak{A} \in T_n$ if and only if there is exactly one element $c \in P_n^{\mathfrak{A}}$ such that $\mathfrak{M}_c \in S_{n-1}$ and $\mathfrak{M}_a \in T_{n-1}$ for all $a \in P_n^{\mathfrak{A}} \setminus \{c\}$.
 Figures \ref{fig1} and \ref{fig2} illustrate this construction.
 For the remaining part of this text, we will write $\eta_n^{\mathfrak{A}}$ to denote the structure $\mathfrak{B}$.
 In addition, for each $a \in P^{\mathfrak{A}}_n$ we will write $\mathfrak{M}^{\mathfrak{A}}_a$ to refer to the structure $\mathfrak{M}_a$.
 
 \begin{figure}
-	\begin{subfigure}{0.5\textwidth}
-		\includegraphics[scale = 0.6]{figs/figure2}
-		\caption{$n$ is even}
-	\end{subfigure}
-	\begin{subfigure}{0.5\textwidth}
-		\includegraphics[scale = 0.6]{figs/figure3}
-		\caption{$n$ is odd}
-	\end{subfigure}
+	\centering
+	\includegraphics[scale = 0.4]{figs/figure2}
 	\caption{Classes $S_n$ and $T_n$ for $n > 1$}
 	\label{fig2}
 \end{figure}
 
 \end{construction}
 
-
-\begin{lemma}\label{exactly_one}
-Let $n\geq 1$ be a natural number. Both $S_n$ and $T_n$ each have exactly one structure up to isomorphism. 
+\begin{lemma}\label{unique_struct}
+	Let $n\geq 1$ be a natural number. Both $S_n$ and $T_n$ each have exactly one structure up to isomorphism. 
 \end{lemma}
 
-
-\begin{proposition}\label{suppose}
-Suppose $n \geq 1$ is a natural number.
-Let $\mathfrak{A} \in S_n$ and $\mathfrak{B} \in T_n$.
-There is an $\mathcal{L}_{\omega\omega}[\tau_n]$-sentence $\varphi_n$ of quantifier rank $n+1$ such that $\mathfrak{A} \vDash \varphi_n$ and $\mathfrak{B} \nvDash \varphi_n$.
+\begin{proposition}\label{separation}
+	Suppose $n \geq 1$ is a natural number.
+	Let $\mathfrak{A} \in S_n$ and $\mathfrak{B} \in T_n$.
+	There is an $\mathcal{L}_{\omega\omega}[\tau_n]$-sentence $\varphi_n$ of quantifier rank $n+1$ such that $\mathfrak{A} \vDash \varphi_n$ and $\mathfrak{B} \nvDash \varphi_n$.
 \end{proposition}
 \begin{proof}
-If $n = 1$, then we can set $\varphi_1 = \forall x (P_1(x)\rightarrow \exists y (P_0(y) \wedge E_1(x,y)))$.
-Thus, assume that $n > 1$ and such $\varphi_{n-1}$ exists.
-Then, if $n$ is even, we can set 
-\[
-	\varphi_n = \exists x (P_n(x) \wedge \varphi_{n-1}^{\{y \colon E_n(x,y)\}}),
-\]
-and, if $n$ is odd, we can set 
-\[
-	\varphi_n = \forall x (P_n(x)\rightarrow \varphi_{n-1}^{\{y \colon E_n(x,y)\}})
-\]
-where $\varphi_{n-1}^{\{y \colon E_n(x,y)\}}$ is the relativization of $\varphi_{n-1}$ to the set $\{y \colon E_n(x,y)\}$. 
+	If $n = 1$, then we can set $\varphi_1 = \forall x (P_1(x)\rightarrow \exists y (P_0(y) \wedge E_1(x,y)))$.
+	Thus, assume that $n > 1$ and such $\varphi_{n-1}$ exists.
+	Then we can set 
+	\[
+	\varphi_n = \forall x (P_n(x)\rightarrow \neg \varphi_{n-1}^{\{y \colon E_n(x,y)\}})
+	\]
+	where $\varphi_{n-1}^{\{y \colon E_n(x,y)\}}$ is the relativization of $\varphi_{n-1}$ to the set $\{y \colon E_n(x,y)\}$. 
 \end{proof}
 
-
-\begin{lemma}\label{natural_number}
-Let $n \geq 1$ be a natural number. 
-Let $\mathfrak{A} \in S_n$, $\mathfrak{B}\in T_n$ if $n$ is odd, and
-$\mathfrak{A}\in T_n$, $\mathfrak{B} \in S_n$ if $n$ is even.
-Set $\mathfrak{A}' = \mathfrak{A}\upharpoonright \tau_n$ and $\mathfrak{B}' = \mathfrak{B}\upharpoonright \tau_n$.
-There is an embedding $f$ of $\mathfrak{A}'$ into $\mathfrak{B}'$ such that for any $\overline{a} \in A^{<\omega}$ there are partitions $(A_1,A_2)$ of $A$ and $(B_1,B_2)$ of $B$ such that
-\begin{enumerate}
-\item $\overline{a} \in A_1^{<\omega}$,
-\item $f | A_1$ is an isomorphism between $\mathfrak{A}' | A_1$ and $\mathfrak{B}' | B_1$,
-\item $\mathfrak{A} | A_2 \cong \mathfrak{A}$ and $\mathfrak{B}|B_2 \cong \mathfrak{B}$,
-\item for every embedding $g \colon \mathfrak{A}'|A_2\rightarrow \mathfrak{B}'|B_2$ and $h \colon \mathfrak{B}' |B_2\rightarrow \mathfrak{A}'|A_2$ it is the case that $(f|A_1) \cup g$ and $(f^{-1}|B_1) \cup h$ are embeddings $\mathfrak{A}'\rightarrow\mathfrak{B}'$ and $\mathfrak{B}'\rightarrow\mathfrak{A}'$, respectively,
-\item for any $m < \omega$, we have $(\mathfrak{A}',\overline{a}) \equiv^m_{\emb} (\mathfrak{B}',f\overline{a})$ if and only if $\mathfrak{A}' \equiv^m_{\emb} \mathfrak{B}'$.
-\end{enumerate}
+\begin{lemma}\label{right_emb}
+	Let $n \geq 1$ be a natural number and $\mathfrak{A} \in S_n$, $\mathfrak{B}\in T_n$.
+	There is an embedding $f$ of $\mathfrak{A}$ into $\mathfrak{B}$ such that for any $\overline{a} \in A^{<\omega}$ there are partitions $(A_1, A_2)$ of $A$ and $(B_1, B_2)$ of $B$ such that
+	\begin{enumerate}
+		\item $\overline{a} \in A_1^{<\omega}$,
+		\item $f | A_1$ is an isomorphism between $\mathfrak{A} | A_1$ and $\mathfrak{B} | B_1$,
+		\item $\mathfrak{A} | A_2 \cong \mathfrak{A}$ and $\mathfrak{B}|B_2 \cong \mathfrak{B}$,
+		\item for every embedding $g \colon \mathfrak{A}|A_2\rightarrow \mathfrak{B}|B_2$ and $h \colon \mathfrak{B} |B_2 \rightarrow \mathfrak{A}|A_2$ it is the case that $(f|A_1) \cup g$ and $(f^{-1}|B_1) \cup h$ are embeddings $\mathfrak{A} \rightarrow \mathfrak{B}$ and $\mathfrak{B} \rightarrow \mathfrak{A}$, respectively,
+		\item for any $m < \omega$, we have $(\mathfrak{A}, \overline{a}) \equiv^m_{\emb} (\mathfrak{B}, f\overline{a})$ if and only if $\mathfrak{A} \equiv^m_{\emb} \mathfrak{B}$.
+	\end{enumerate}
 \end{lemma}
 \begin{proof}
-Recall first that, by our construction, there is an element $b \in B$ such that $C^{\mathfrak{B}}_n = \{b\}$.
-We use this element to define the ordering $\xi_n = \eta^{\mathfrak{B}}_n | \{x \in B \colon x  < b \}$.
-It is easy to see by using Lemma \ref{order_isom} that there is an isomorphism $h_n$ between $\eta^{\mathfrak{A}}_n$ and $\xi_n$.
-
-We have three possible cases to consider: $n=1$, $n > 1$ is even and $n > 1$ is odd.
-First suppose that $n = 1$. Then $\mathfrak{A} \in S_1$ and $\mathfrak{B} \in T_1$.
-Define function $f \colon A \rightarrow B$ by setting $f(x) = h_1(x)$ if $x \in P_1^{\mathfrak{A}}$, and $f(x) = y$ if $x \in P^{\mathfrak{A}}_0$ where $y \in P^{\mathfrak{B}}_0$ is such that there is $z \in P^{\mathfrak{A}}_1$ with $\mathfrak{A} \vDash E_1(z,x)$ and $\mathfrak{B} \vDash E_1(h_1(z),y)$.
-It is easy to see that $f$ is an embedding of $\mathfrak{A}'$ into $\mathfrak{B}'$.
-Let $a_0,\dots,a_k \in A$. We must find partitions satisfying conditions 1-5.
-For this, let $b, c \in A$ be such that 
-\begin{align*}
+	We have two possible cases to consider: $n=1$ and $n > 1$.
+	First suppose that $n = 1$. 
+	Let $a \in B$ be that unique element of $P_1^{\mathfrak{B}}$ for which there is no $b \in B$ such that $(a, b) \in E_1^{\mathfrak{B}}$.
+	We use this element to define an ordering $\xi_1 = \eta^{\mathfrak{B}}_1 | \{x \in B \colon x < a \}$.
+	It is easy to see by using Lemma \ref{order_isom} that there is an isomorphism $h_1$ between $\eta^{\mathfrak{A}}_1$ and $\xi_1$.
+	
+	Define function $f \colon A \rightarrow B$ by setting $f(x) = h_1(x)$ if $x \in P_1^{\mathfrak{A}}$, and $f(x) = y$ if $x \in P^{\mathfrak{A}}_0$ where $y \in P^{\mathfrak{B}}_0$ is such that there is $z \in P^{\mathfrak{A}}_1$ with $\mathfrak{A} \vDash E_1(z,x)$ and $\mathfrak{B} \vDash E_1(h_1(z),y)$.
+	It is easy to see that $f$ is an embedding of $\mathfrak{A}$ into $\mathfrak{B}$.
+	Let $a_0,\dots,a_k \in A$. We must find partitions satisfying conditions 1-5.
+	For this, let $b, c \in A$ be such that 
+	\begin{align*}
 	\mathfrak{A} \vDash &P_1(b) \wedge P_0(c) \wedge E_1(b,c) \wedge \\
 	&\bigwedge_{i\leq k}\big(\big(P_1(a_i) \rightarrow a_i<b\big) \wedge \big(P_0(a_i)\rightarrow a_i < c\big)\big).
-\end{align*}
-Now set $A_1 = \{x \in A \colon x \leq b \text{ or } x \leq c \}$, $B_1 = f[A_1]$, and 
-denote by $A_2$, $B_2$ the complements of $A_1$, $B_1$, respectively.
-It is straightforward to verify that partitions $(A_1,A_2)$, $(B_1,B_2)$ satisfy all the five requirements. 
-Notice that the fact 5 follows directly from the fact 4.
-Thus, the case $n = 1$ is proved. 
-
-Assume now that $n > 1$ is even. Then $\mathfrak{A} \in T_n$ and $\mathfrak{B} \in S_n$, and
-we have $\mathfrak{M}^{\mathfrak{A}}_x \in T_{n-1}$ for all $x \in P^{\mathfrak{A}}_n$ and $\mathfrak{M}^{\mathfrak{B}}_x \in T_{n-1}$ for all $x \in \xi_n$ so, by Lemma \ref{exactly_one}, for each $x \in P_n^{\mathfrak{A}}$ there is an isomorphism $h_x$ between $\mathfrak{M}^{\mathfrak{A}}_x$ and $\mathfrak{M}^{\mathfrak{B}}_{h(x)}$.
-Then $f = h_n \cup \bigcup_{x\in P^{\mathfrak{A}}_n}h_x$ is a wanted embedding.
-The case where $n>1$ is odd is proved in the same way.
+	\end{align*}
+	Now set $A_1 = \{x \in A \colon x \leq b \text{ or } x \leq c \}$, $B_1 = f[A_1]$, and 
+	denote by $A_2$, $B_2$ the complements of $A_1$, $B_1$, respectively.
+	It is straightforward to verify that partitions $(A_1,A_2)$, $(B_1,B_2)$ satisfy all the five requirements. 
+	Notice that the fact 5 follows directly from the fact 4.
+	Thus, the case $n = 1$ is proved. 
+	
+	Assume now that $n > 1$. By our construction, there is a unique element $a \in P_n^{\mathfrak{B}}$ such that $\mathfrak{M}_a^{\mathfrak{B}} \in S_{n-1}$.
+	Define an ordering $\xi_n$ by setting $\xi_n = \eta^{\mathfrak{B}}_n | \{x \in B \colon x < a \}$.
+	Again, as in the case $n = 1$, there is an isomorphism $h_n$ between $\eta_n^{\mathfrak{A}}$ and $\xi_n$.
+	
+	Thus, we have $\mathfrak{M}^{\mathfrak{A}}_x \in T_{n-1}$ for all $x \in P^{\mathfrak{A}}_n$ and $\mathfrak{M}^{\mathfrak{B}}_x \in T_{n-1}$ for all $x \in \xi_n$ so, by Lemma \ref{unique_struct}, for each $x \in P_n^{\mathfrak{A}}$ there is an isomorphism $h_x$ between $\mathfrak{M}^{\mathfrak{A}}_x$ and $\mathfrak{M}^{\mathfrak{B}}_{h(x)}$.
+	Then $f = h_n \cup \bigcup_{x\in P^{\mathfrak{A}}_n}h_x$ is a wanted embedding.
 \end{proof}
 
-\begin{lemma}\label{structure}
-Let $n>1$ be a natural number. 
-Let $\mathfrak{A} \in S_n$, $\mathfrak{B}\in T_n$ if $n$ is odd, and
-$\mathfrak{A}\in T_n$, $\mathfrak{B} \in S_n$ if $n$ is even.
-Set $\mathfrak{A}' = \mathfrak{A}\upharpoonright \tau_n$ and $\mathfrak{B}' = \mathfrak{B}\upharpoonright \tau_n$.
-There is an embedding $f$ of $\mathfrak{B}'$ into $\mathfrak{A}'$ such that for any $\overline{a} \in B^{<\omega}$ there are partitions $(A_1,A_2)$ of $A$ and $(B_1,B_2)$ of $B$ such that
-\begin{enumerate}
-\item $\overline{a} \in B_1^{<\omega}$,
-\item $f | B_1$ is an isomorphism between $\mathfrak{B}' | B_1$ and $\mathfrak{A}' | A_1$,
-\item $\mathfrak{A}|A_2 \in T_{n-1}$ and $\mathfrak{B}|B_2 \in S_{n-1}$ if $n$ is even,
-\item $\mathfrak{A}|A_2 \in S_{n-1}$ and $\mathfrak{B}|B_2 \in T_{n-1}$ if $n$ is odd,
-\item for every embedding $g \colon \mathfrak{A}'|A_2\rightarrow \mathfrak{B}'|B_2$ and $h \colon \mathfrak{B}' |B_2\rightarrow \mathfrak{A}'|A_2$ it is the case that $(f^{-1}|A_1) \cup g$ and $(f|B_1) \cup h$ are embeddings $\mathfrak{A}'\rightarrow\mathfrak{B}'$ and $\mathfrak{B}'\rightarrow\mathfrak{A}'$, respectively,
-\item we have $(\mathfrak{A}',f\overline{a}) \equiv^{n-1}_{\emb} (\mathfrak{B}',\overline{a})$ if and only if $(\mathfrak{M}\upharpoonright\tau_{n-1}) \equiv^{n-1}_{\emb} (\mathfrak{N}\upharpoonright \tau_{n-1})$ for all $\mathfrak{M} \in T_{n-1}$ and $\mathfrak{N} \in S_{n-1}$.
-\end{enumerate}
+\begin{lemma}\label{left_emb}
+	Let $n>1$ be a natural number and $\mathfrak{A} \in S_n$, $\mathfrak{B}\in T_n$.
+	There is an embedding $f$ of $\mathfrak{B}$ into $\mathfrak{A}$ such that for any $\overline{a} \in B^{<\omega}$ there are partitions $(A_1,A_2)$ of $A$ and $(B_1,B_2)$ of $B$ such that
+	\begin{enumerate}
+		\item $\overline{a} \in B_1^{<\omega}$,
+		\item $f | B_1$ is an isomorphism between $\mathfrak{B} | B_1$ and $\mathfrak{A} | A_1$,
+		\item $\mathfrak{A}|A_2 \in T_{n-1}$ and $\mathfrak{B}|B_2 \in S_{n-1}$,
+		\item for every embedding $g \colon \mathfrak{A}|A_2\rightarrow \mathfrak{B}|B_2$ and $h \colon \mathfrak{B}' |B_2\rightarrow \mathfrak{A}'|A_2$ it is the case that $(f^{-1}|A_1) \cup g$ and $(f|B_1) \cup h$ are embeddings $\mathfrak{A} \rightarrow \mathfrak{B}$ and $\mathfrak{B} \rightarrow \mathfrak{A}$, respectively,
+		\item we have $(\mathfrak{A}, f\overline{a}) \equiv^{n-1}_{\emb} (\mathfrak{B}, \overline{a})$ if and only if $\mathfrak{M} \equiv^{n-1}_{\emb} \mathfrak{N}$ for all $\mathfrak{M} \in T_{n-1}$ and $\mathfrak{N} \in S_{n-1}$.
+	\end{enumerate}
 \end{lemma}
 \begin{proof}
-There are two possible cases: $n$ is even and $n$ is odd.
-Suppose first that $n$ is even.
-Then $\mathfrak{A} \in T_n$ and $\mathfrak{B} \in S_n$.
-Let $h$ be an isomorphism between $\eta^{\mathfrak{B}}_n$ and $\eta^{\mathfrak{A}}_n$.
-For each $x\in P_n^{\mathfrak{B}} \setminus C_n^{\mathfrak{B}}$, let $h_x$ be an isomorphism between $\mathfrak{M}^{\mathfrak{B}}_x$ and $\mathfrak{M}^{\mathfrak{A}}_{h(x)}$. For $a \in B$ such that $C^{\mathfrak{B}}_n = \{a\}$, let $h_a$ be an embedding of $\mathfrak{M}^{\mathfrak{B}}_a$ into $\mathfrak{M}^{\mathfrak{A}}_{h(a)}$ as given by Lemma \ref{natural_number}.
-Let $f = h \cup \bigcup_{x\in P^{\mathfrak{B}}_n}h_x$. Then $f$ is an embedding of $\mathfrak{B}'$ into $\mathfrak{A}'$.
-Note that $\mathfrak{M}^{\mathfrak{B}}_a \in S_{n-1}$ and $\mathfrak{M}^{\mathfrak{A}}_{h(a)} \in T_{n-1}$, and for all embeddings $g \colon  (\mathfrak{M}^{\mathfrak{B}}_a \upharpoonright \tau_{n-1}) \rightarrow (\mathfrak{M}^{\mathfrak{A}}_{h(a)} \upharpoonright \tau_{n-1})$ and 
-$g' \colon (\mathfrak{M}^{\mathfrak{A}}_{h(a)} \upharpoonright \tau_{n-1}) \rightarrow (\mathfrak{M}^{\mathfrak{B}}_a \upharpoonright \tau_{n-1})$ the functions $f' \cup g$ and $f'^{-1} \cup g'$ are also embeddings $\mathfrak{B}' \rightarrow \mathfrak{A}'$ and $\mathfrak{A}' \rightarrow \mathfrak{B}'$, respectively, where $f' = h\cup \bigcup_{x\in P_n^{\mathfrak{B}}\setminus \{a\}} h_x$.
-Let $\overline{a} \in B^{<\omega}$, $\overline{a} = (a_1,\dots,a_k)$, and assume without loss of generality that $a_1,\dots,a_m \in B\setminus M_a$ and $a_{m+1},\dots,a_k \in M_a$ for some $m\leq k$.
-In what follows we will write $\mathfrak{M}_x$ instead of $\mathfrak{M}_x^{\mathfrak{A}}$ or $\mathfrak{M}_x^{\mathfrak{B}}$.
-For all $x \in P^{\mathfrak{A}}_n \cup P^{\mathfrak{B}}_n$, let $\mathfrak{M}'_x = \mathfrak{M}_x\upharpoonright \tau_{n-1}$.
-By Lemma \ref{natural_number}, there are partitions $(M_1,M_2)$ of $M_a$ and $(N_1,N_2)$ of $M_{h(a)}$ such that
-\begin{enumerate}
-\item $a_{m+1},\dots,a_k \in M_1$,
-\item $h_a|M_1$ is an isomorphism between $\mathfrak{M}'_a | M_1$ and $\mathfrak{M}'_{h(a)} | N_1$,
-\item $\mathfrak{M}_a | M_2 \in S_{n-1}$ and $\mathfrak{M}_{h(a)} | N_2 \in T_{n-1}$,
-\item for every embedding $g \colon \mathfrak{M}'_a|M_2 \rightarrow \mathfrak{M}'_{h(a)}|N_2$ and $g' \colon \mathfrak{M}'_{h(a)}|N_2 \rightarrow \mathfrak{M}'_a | M_2$ we have that 
-$(h_a | M_1) \cup g$ and $(h_a^{-1} | N_1)\cup g'$ are also embeddings $\mathfrak{M}'_a \rightarrow \mathfrak{M}'_{h(a)}$ and $\mathfrak{M}'_{h(a)} \rightarrow \mathfrak{M}'_a$, respectively.
-\end{enumerate}
-Now let $A_1 = A \setminus N_2$, $A_2 = N_2$, $B_1 = B \setminus M_2$ and $B_2 = M_2$.
-Then $(A_1,A_2)$ and $(B_1,B_2)$ are partitions of $A$ and $B$, respectively, satisfying all the six requirements.
-The case of $n$ being odd is proved in the same way.
+	Let $h$ be an isomorphism between $\eta^{\mathfrak{B}}_n$ and $\eta^{\mathfrak{A}}_n$, and let $a \in P_n^{\mathfrak{B}}$ be the unique element for which $\mathfrak{M}_a^{\mathfrak{B}} \in S_{n-1}$.
+	For each $x \in P_n^{\mathfrak{B}} \setminus \{a\}$ let $h_x$ be an isomorphism between $\mathfrak{M}^{\mathfrak{B}}_x$ and $\mathfrak{M}^{\mathfrak{A}}_{h(x)}$, and let $h_a$ be an embedding of $\mathfrak{M}^{\mathfrak{B}}_a$ into $\mathfrak{M}^{\mathfrak{A}}_{h(a)}$ as given by Lemma \ref{right_emb}.
+	
+	Let $f = h \cup \bigcup_{x\in P^{\mathfrak{B}}_n}h_x$. Then $f$ is an embedding of $\mathfrak{B}$ into $\mathfrak{A}$.
+	Note that $\mathfrak{M}^{\mathfrak{B}}_a \in S_{n-1}$ and $\mathfrak{M}^{\mathfrak{A}}_{h(a)} \in T_{n-1}$, and for all embeddings $g \colon \mathfrak{M}^{\mathfrak{B}}_a \rightarrow \mathfrak{M}^{\mathfrak{A}}_{h(a)}$ and 
+	$g' \colon \mathfrak{M}^{\mathfrak{A}}_{h(a)} \rightarrow \mathfrak{M}^{\mathfrak{B}}_a$ the functions $f' \cup g$ and $f'^{-1} \cup g'$ are also embeddings $\mathfrak{B} \rightarrow \mathfrak{A}$ and $\mathfrak{A} \rightarrow \mathfrak{B}$, respectively, where $f' = h\cup \bigcup_{x\in P_n^{\mathfrak{B}}\setminus \{a\}} h_x$.
+	
+	Let $\overline{a} \in B^{<\omega}$, $\overline{a} = (a_1,\dots,a_k)$, and assume without loss of generality that $a_1,\dots,a_m \in B\setminus M_a$ and $a_{m+1},\dots,a_k \in M_a$ for some $m\leq k$.
+	In what follows we will write $\mathfrak{M}_x$ instead of $\mathfrak{M}_x^{\mathfrak{A}}$ or $\mathfrak{M}_x^{\mathfrak{B}}$.
+	By Lemma \ref{right_emb}, there are partitions $(M_1,M_2)$ of $M_a$ and $(N_1,N_2)$ of $M_{h(a)}$ such that
+	\begin{enumerate}
+		\item $a_{m+1},\dots,a_k \in M_1$,
+		\item $h_a|M_1$ is an isomorphism between $\mathfrak{M}_a | M_1$ and $\mathfrak{M}_{h(a)} | N_1$,
+		\item $\mathfrak{M}_a | M_2 \in S_{n-1}$ and $\mathfrak{M}_{h(a)} | N_2 \in T_{n-1}$,
+		\item for every embedding $g \colon \mathfrak{M}_a|M_2 \rightarrow \mathfrak{M}_{h(a)}|N_2$ and $g' \colon \mathfrak{M}_{h(a)}|N_2 \rightarrow \mathfrak{M}_a | M_2$ we have that 
+		$(h_a | M_1) \cup g$ and $(h_a^{-1} | N_1)\cup g'$ are also embeddings $\mathfrak{M}_a \rightarrow \mathfrak{M}_{h(a)}$ and $\mathfrak{M}_{h(a)} \rightarrow \mathfrak{M}_a$, respectively.
+	\end{enumerate}
+	Now let $A_1 = A \setminus N_2$, $A_2 = N_2$, $B_1 = B \setminus M_2$ and $B_2 = M_2$.
+	Then $(A_1,A_2)$ and $(B_1,B_2)$ are partitions of $A$ and $B$, respectively, satisfying all the five requirements.
 \end{proof}
 
-\begin{lemma}\label{we_have}
-Let $\mathfrak{A} \in S_1$ and $\mathfrak{B} \in T_1$. Then $\mathfrak{A}' \equiv_{\emb}^1 \mathfrak{B}'$ where $\mathfrak{A}' = \mathfrak{A}\upharpoonright \tau_1$ and $\mathfrak{B}' = \mathfrak{B}\upharpoonright \tau_1$.
+\begin{lemma}\label{one_equiv}
+	Let $\mathfrak{A} \in S_1$ and $\mathfrak{B} \in T_1$. Then $\mathfrak{A} \equiv_{\emb}^1 \mathfrak{B}$.
 \end{lemma}
 \begin{proof}
-We already proved that there is an embedding of $\mathfrak{A}'$ into $\mathfrak{B}'$ in Lemma \ref{natural_number}, so we need to find an embedding of $\mathfrak{B}'$ into $\mathfrak{A}'$.
-We expand the vocabulary $\tau_1$ by setting $\tau^*_1 = \tau_1 \cup \{c_q,d_q \colon q \text{ is a rational number } \}$ where all $c_q$, $d_q$ are distinct constant symbols. Let $h \colon \eta \rightarrow \eta^{\mathfrak{A}}_1$ and $g \colon \eta \rightarrow \eta^{\mathfrak{B}}_1$ be isomorphisms.
-Let $a \in \eta$ be such that $C^{\mathfrak{B}}_1 = \{g(a)\}$.
-Let $\mathfrak{A}^*$, $\mathfrak{B}^*$ be $\tau^*$-structures such that $\mathfrak{A}^* \upharpoonright \tau_1 = \mathfrak{A}$ and $\mathfrak{B}^*\upharpoonright \tau_1 = \mathfrak{B}$, $c^{\mathfrak{A}^*}_q = h(q)$, $c^{\mathfrak{B}^*}_q = g(q)$ for all $q\in \eta$, $d_q^{\mathfrak{A}^*}$, $d_q^{\mathfrak{B}^*}$ are such that $\mathfrak{A}^* \vDash E_1(c_q, d_q)$ for all $q \in \eta$ and $\mathfrak{B}^* \vDash E_1(c_q, d_q)$ for all $q \in \eta \setminus \{a\}$, and $d_a^{\mathfrak{B}^*}$ is that element $z$ of $\eta_0^{\mathfrak{B}}$ for which there is no element $y \in \eta_1^{\mathfrak{B}}$ such that $\mathfrak{B} \vDash E_1(y, z)$.
-We define a function $f \colon B \rightarrow A$ by setting
-\begin{align*}
+	We already proved that there is an embedding of $\mathfrak{A}$ into $\mathfrak{B}$ in Lemma \ref{right_emb}, so we only need to find an embedding of $\mathfrak{B}$ into $\mathfrak{A}$.
+	We expand the vocabulary $\tau_1$ by setting $\tau^*_1 = \tau_1 \cup \{c_q,d_q \colon q \text{ is a rational number } \}$ where all $c_q$, $d_q$ are distinct constant symbols. Let $h \colon \eta \rightarrow \eta^{\mathfrak{A}}_1$ and $g \colon \eta \rightarrow \eta^{\mathfrak{B}}_1$ be isomorphisms.
+	Let $a \in \eta$ be that unique element for which there is no $b \in \eta_0^{\mathfrak{B}}$ such that $\mathfrak{B} \vDash E_1(g(a), b)$.
+	
+	Let $\mathfrak{A}^*$, $\mathfrak{B}^*$ be $\tau^*$-structures such that $\mathfrak{A}^* \upharpoonright \tau_1 = \mathfrak{A}$ and $\mathfrak{B}^*\upharpoonright \tau_1 = \mathfrak{B}$, $c^{\mathfrak{A}^*}_q = h(q)$, $c^{\mathfrak{B}^*}_q = g(q)$ for all $q\in \eta$, $d_q^{\mathfrak{A}^*}$, $d_q^{\mathfrak{B}^*}$ are such that $\mathfrak{A}^* \vDash E_1(c_q, d_q)$ for all $q \in \eta$ and $\mathfrak{B}^* \vDash E_1(c_q, d_q)$ for all $q \in \eta \setminus \{a\}$, and $d_a^{\mathfrak{B}^*}$ is that element $z$ of $\eta_0^{\mathfrak{B}}$ for which there is no element $y \in \eta_1^{\mathfrak{B}}$ such that $\mathfrak{B} \vDash E_1(y, z)$.
+	We define a function $f \colon B \rightarrow A$ by setting
+	\begin{align*}
 	&\left. \begin{array}{rl}
-		f(c_q^{\mathfrak{B}^*}) = c_{q+1}^{\mathfrak{A}^*}, \\
-		f(d_q^{\mathfrak{B}^*}) = d_{q+1}^{\mathfrak{A}^*} \\
-		\end{array} \right\} \text{ if } q > a, \\
+	f(c_q^{\mathfrak{B}^*}) = c_{q+1}^{\mathfrak{A}^*}, \\
+	f(d_q^{\mathfrak{B}^*}) = d_{q+1}^{\mathfrak{A}^*} \\
+	\end{array} \right\} \text{ if } q > a, \\
 	&\left. \begin{array}{rl}
-		f(c_q^{\mathfrak{B}^*}) = c_{q-1}^{\mathfrak{A}^*}, \\
-		f(d_q^{\mathfrak{B}^*}) = d_{q-1}^{\mathfrak{A}^*} \\
-		\end{array} \right\} \text{ if } q < a,\\
+	f(c_q^{\mathfrak{B}^*}) = c_{q-1}^{\mathfrak{A}^*}, \\
+	f(d_q^{\mathfrak{B}^*}) = d_{q-1}^{\mathfrak{A}^*} \\
+	\end{array} \right\} \text{ if } q < a,\\
 	&\ \ f(c^{\mathfrak{B}^*}_a) = c^{\mathfrak{A}^*}_a, \\
 	&\ \ f(d^{\mathfrak{B}^*}_a) = d^{\mathfrak{A}^*}_{a+\frac{1}{2}}.
-\end{align*}
-It is straightforward to verify that $f$ is indeed an embedding of $\mathfrak{B}'$ into $\mathfrak{A}'$.
+	\end{align*}
+	It is straightforward to verify that $f$ is indeed an embedding of $\mathfrak{B}$ into $\mathfrak{A}$.
 \end{proof}
 
-\begin{proposition}\label{let}
-Let $n \geq 1$ be a natural number and $\mathfrak{A}'\in T_n$, $\mathfrak{B}'\in S_n$.
-Then $\mathfrak{A} \equiv_{\emb}^n \mathfrak{B}$, where $\mathfrak{A} = \mathfrak{A}' \upharpoonright \tau_n$ and $\mathfrak{B} = \mathfrak{B}' \upharpoonright \tau_n$.
+\begin{proposition}\label{n_equiv}
+	Let $n \geq 1$ be a natural number and $\mathfrak{A}\in S_n$, $\mathfrak{B}\in T_n$.
+	Then $\mathfrak{A} \equiv_{\emb}^n \mathfrak{B}$.
 \end{proposition}
 \begin{proof}
-We use induction on $n$. The base case is proved in Lemma \ref{we_have}.
-Assume that $n>1$ is even and the claim is true for $n-1$.
-Let Duplicator select embeddings $f \colon \mathfrak{A} \rightarrow \mathfrak{B}$  as in Lemma \ref{natural_number} and $g \colon \mathfrak{B} \rightarrow \mathfrak{A}$  as in Lemma \ref{structure}.
-Suppose first that Spoiler chose embedding $f$ and elements $a_1,\dots,a_k \in A$.
-Let $(A_1,A_2)$ and $(B_1,B_2)$ be partitions of $A$ and $B$, respectively, like in the statement of Lemma \ref{natural_number}.
-Then $(\mathfrak{A},\overline{a}) \equiv^{n-1}_{\emb} (\mathfrak{B},f\overline{a})$
-by the fact 5. of Lemma \ref{natural_number} and the induction hypothesis.
-Now suppose that Spoiler selected the embedding $g$ and elements $b_1,\dots,b_l \in B$.
-Let $(A^*_1,A^*_2)$ and $(B^*_1,B^*_2)$ be partitions of $A$ and $B$, respectively, like in Lemma \ref{structure}. Then by its 6. fact we have $(\mathfrak{A},g\overline{b}) \equiv^{n-1}_{\emb} (\mathfrak{B},\overline{b})$. 
-Thus, since also $(\mathfrak{A},\overline{a}) \equiv^{n-1}_{\emb} (\mathfrak{B},f\overline{a})$, we have $\mathfrak{A} \equiv^n_{\emb} \mathfrak{B}$ if $n$ is even.
-The case where $n$ is odd is proved in the same way.
+	We use induction on $n$. The base case is proved in Lemma \ref{one_equiv}.
+	Assume that $n>1$ and the claim is true for $n-1$.
+	Let Duplicator select embeddings $f \colon \mathfrak{A} \rightarrow \mathfrak{B}$  as in Lemma \ref{right_emb} and $g \colon \mathfrak{B} \rightarrow \mathfrak{A}$  as in Lemma \ref{left_emb}.
+	Suppose first that Spoiler chose embedding $f$ and elements $a_1,\dots,a_k \in A$.
+	Let $(A_1,A_2)$ and $(B_1,B_2)$ be partitions of $A$ and $B$, respectively, as given by Lemma \ref{right_emb}.
+	Then $(\mathfrak{A},\overline{a}) \equiv^{n-1}_{\emb} (\mathfrak{B},f\overline{a})$
+	by the fact 5. of Lemma \ref{right_emb} and the induction hypothesis.
+	Now suppose that Spoiler selected the embedding $g$ and elements $b_1,\dots,b_l \in B$.
+	Let $(A^*_1,A^*_2)$ and $(B^*_1,B^*_2)$ be partitions of $A$ and $B$, respectively, as given by Lemma \ref{left_emb}. Then by its 5. fact we have $(\mathfrak{A},g\overline{b}) \equiv^{n-1}_{\emb} (\mathfrak{B},\overline{b})$. 
+	Thus, since also $(\mathfrak{A},\overline{a}) \equiv^{n-1}_{\emb} (\mathfrak{B},f\overline{a})$, we have $\mathfrak{A} \equiv^n_{\emb} \mathfrak{B}$.
 \end{proof}
 
-\begin{proof}[Proof of Theorem \ref{for_each}]
-Combine Propositions \ref{suppose} and \ref{let}.
-The existence of $\varphi_n$ having the required form with alternating existence and universal quantifiers follows from the proof of Proposition \ref{suppose}.
+\begin{proof}[Proof of Theorem \ref{main}]
+	Combine Propositions \ref{separation} and \ref{n_equiv}.
+	The existence of $\varphi_n$ having the required form with alternating existence and universal quantifiers follows from the proof of Proposition \ref{separation}.
 \end{proof}
 
 \begin{remark}
-In the proof of Theorem \ref{for_each} we used a tree construction 
-in which new structures were built from given structures by connecting them in a specific way.
-This sort of construction is often encountered in proofs of  undefinability results.
-For example, a result similar to Theorem \ref{for_each} concerning logics with quantifiers of bounded arity was proved in \cite{Keisler:2011} by Keisler and Lotfallah. They used an analogous tree construction and the bijective game (see Remark \ref{bijective}) in their proof. 
-Worth mentioning are also tree-like sums of Makowsky and Shelah in \cite{Makowski:1979} based on ideas of Friedman \cite{Friedman:1973} and Gregory \cite{Gregory:1974}.
-They are used to prove some results concerning, among others, Beth definability in abstract logics.
+	In the proof of Theorem \ref{main} we used a tree construction 
+	in which new structures were built from given structures by connecting them in a specific way.
+	This sort of construction is often encountered in proofs of  undefinability results.
+	For example, a result similar to Theorem \ref{main} concerning logics with quantifiers of bounded arity was proved in \cite{Keisler:2011} by Keisler and Lotfallah. They used an analogous tree construction and the bijective game (see Remark \ref{bijective}) in their proof. 
+	Worth mentioning are also tree-like sums of Makowsky and Shelah in \cite{Makowski:1979} based on ideas of Friedman \cite{Friedman:1973} and Gregory \cite{Gregory:1974}.
+	They are used to prove some results concerning, among others, Beth definability in abstract logics.
 \end{remark}
 
 \bibliographystyle{jflnat}	
