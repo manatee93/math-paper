@@ -350,7 +350,8 @@ $\mathcal{L}_{\kappa\omega}(Q_C)[\tau]$-formula $\chi$ such that
 	\mathfrak{A} \vDash \chi \Leftrightarrow \Psi(\mathfrak{A})\in C
 \end{equation}
 for all $\mathfrak{A} \in \Str[\tau]$.
-In a similar way we define the logics $\mathcal{L}_{\infty \omega}(Q_C)$ and $\mathcal{L}^{\omega}_{\infty\omega}(Q_C)$.
+In a similar way we define the logics $\mathcal{L}_{\infty \omega}(Q_C)$ 
+and $\mathcal{L}^{\omega}_{\infty\omega}(Q_C)$.
 We say that $Q_C$ is the \emph{generalized quantifier} corresponding to the
 class $C$, and write $Q_C(\overline{x}_R\psi_R)_{R\in\sigma}$ for the formula
 $\chi$ in \eqref{gen_quant_formula}.
@@ -1712,8 +1713,10 @@ $\mathfrak{B} \vDash Q_A(\overline{x}_h \psi_h)_{h \in \mathcal{F}_A}$ and
 $\mathfrak{A} \vDash Q_B(\overline{x}_h \psi_h)_{h \in \mathcal{F}_B}$.
 Then there are embeddings
 \begin{align*}
-	f \colon (A,(\psi_h^{\mathfrak{A}})_{h \in \mathcal{F}_A}) &\rightarrow (B,(\psi_h^{\mathfrak{B}})_{h \in \mathcal{F}_A}) \text{ and} \\
-	g \colon (B,(\psi_h^{\mathfrak{B}})_{h \in \mathcal{F}_B}) &\rightarrow (A,(\psi_h^{\mathfrak{A}})_{h \in \mathcal{F}_B}),
+	f \colon (A,(\psi_h^{\mathfrak{A}})_{h \in \mathcal{F}_A}) &\rightarrow 
+	(B,(\psi_h^{\mathfrak{B}})_{h \in \mathcal{F}_A}) \text{ and} \\
+	g \colon (B,(\psi_h^{\mathfrak{B}})_{h \in \mathcal{F}_B}) &\rightarrow
+	(A,(\psi_h^{\mathfrak{A}})_{h \in \mathcal{F}_B}),
 \end{align*}
 so there are embeddings $f$ and $g$ such that
 \begin{align*}
@@ -1763,14 +1766,14 @@ $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-sentence of quantifier rank
 less than $n$.
 \item The sentence $\varphi_n$ is of the form
 \[
-\varphi_n = Q_n x_n \cdots Q_1 x_1 \vartheta(x_1,\dots,x_n)
+	\varphi_n = Q_n x_n \cdots Q_1 x_1 \vartheta(x_1,\dots,x_n)
 \]
 where
 \[
-Q_n = \begin{cases}
-\forall \text{ if } n \text{ is odd},\\
-\exists \text{ if } n \text{ if even},
-\end{cases}
+	Q_n = \begin{cases}
+	\forall \text{ if } n \text{ is odd},\\
+	\exists \text{ if } n \text{ if even},
+	\end{cases}
 \]
 and $\vartheta$ is quantifier-free.
 \end{enumerate}
@@ -1807,7 +1810,7 @@ In the text of this construction we will assume that all structures are disjoint
 unless mentioned otherwise.
 For every natural number $n \geq 1$, we define vocabularies
 \[
-\tau_n = \{P_0,\dots,P_n,\leq,E_1,\dots,E_n\}
+	\tau_n = \{P_0,\dots,P_n,\leq,E_1,\dots,E_n\}
 \]
 where all $P_i$ are unary and $E_i$, $\leq$ binary relation symbols.
 Our aim is to define classes $S_n, T_n \subset \Str[\tau_n]$ such that
@@ -1847,13 +1850,18 @@ and
 	\label{fig1}
 \end{figure}
 
-$\textbf{n > 1:}$ We define class $R_n \subset \Str[\tau_n]$ by setting $\mathfrak{A} \in R_n$ if and only if there is $\mathfrak{B} \in \Str[\{\leq\}]$ isomorphic to $\eta$ and structures $\mathfrak{M}_a \in \Str[\tau_{n-1}]$ for each $a \in B$ such that
+$\textbf{n > 1:}$ We define class $R_n \subset \Str[\tau_n]$ by setting 
+$\mathfrak{A} \in R_n$ if and only if there is 
+$\mathfrak{B} \in \Str[\{\leq\}]$ isomorphic to $\eta$ and structures 
+$\mathfrak{M}_a \in \Str[\tau_{n-1}]$ for each $a \in B$ such that
 \[
-\mathfrak{A} \upharpoonright \tau_{n-1}  = \mathfrak{B} \cup \bigcup_{a \in B}\mathfrak{M}_a,
+	\mathfrak{A} \upharpoonright \tau_{n-1}  = 
+	\mathfrak{B} \cup \bigcup_{a \in B}\mathfrak{M}_a,
 \]
 $P_n^{\mathfrak{A}} = B$, and
 \[
-E_n^{\mathfrak{A}} = \{(x,y) \in A^2 \colon x \in P_n^{\mathfrak{A}} \text{ and } y \in M_x \}.
+	E_n^{\mathfrak{A}} = \{(x,y) \in A^2 \colon 
+	x \in P_n^{\mathfrak{A}} \text{ and } y \in M_x \}.
 \]
 Then we define classes $S_n$, $T_n$ by setting $\mathfrak{A} \in S_n$ if and only
 if $\mathfrak{A} \in R_n$ and for all $a \in P_n^{\mathfrak{A}}$ we have
