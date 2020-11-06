@@ -896,61 +896,134 @@ of finite structures are not definable in such a logic.
 
 
 \begin{lemma}\label{quant_elim_finite_lemma}
-Let $\tau$ be a finite relational vocabulary, $Q$ an embedding-closed quantifier
-of width $n<\omega$ and $\varphi = Q(x_i\psi_i)_{i<n}$ where all $\psi_i$ are
-quantifier-free $\tau$-formulas.
-Let $(\mathfrak{A}_i)_{i<\omega}$ be a chain of quasi-homogeneous $\tau$-structures.
-Then there is a natural number $k$ and a quantifier-free $\tau$-formula
+Let $\tau$ and $\sigma$ be finite relational vocabularies and
+$(\Psi, (\psi_R)_{R \in \sigma})$ an
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of
+$\sigma$ in $\tau$.
+Suppose that $Q$ is an embedding-closed quantifier of width $n < \omega$
+and $\varphi = Q(\overline{x}_i \chi_i)_{i < n}$ a formula with $m$ free
+variables where all $\chi_i$ are
+quantifier-free $\sigma$-formulas.
+Let $(\Psi(\mathfrak{A}_i))_{i < \omega}$ be a chain where all $\mathfrak{A}_i$
+are quasi-homogeneous $\tau$-structures.
+Then there is a natural number $N$ and a quantifier-free $\sigma$-formula
 $\vartheta$ such that
 \[
-	\mathfrak{A}_i \vDash \forall \overline{x}(\varphi \leftrightarrow \vartheta)
+	\Psi(\mathfrak{A}_i) \vDash \forall
+	\overline{x}(\varphi \leftrightarrow \vartheta)
 \]
-for all $i \geq k$.
+for all $i \geq N$.
 \end{lemma}
 \begin{proof}
-For each $i < \omega$, let
+For each $i < \omega$, let $T_i$ be the set of all atomic
+$m$-types $t$ of $\tau$
+such that $\mathfrak{A}_j, \overline{a} \vDash t$
+and $\Psi(\mathfrak{A}_j), \overline{a} \vDash \varphi$
+for some $\overline{a} \in A^m$ and $j \leq i$.
+We clearly have $T_j \subseteq T_i$ whenever $j \leq i$.
+Since $\tau$ is finite and relational, there is a natural number $k$
+at which the chain $(T_i)_{i < \omega}$ achieves its maximum.
+Write $T = T_k$.
+We claim that for all $i \geq k$ and $\overline{a} \in A_i^m$, we have
+\begin{equation}\label{eq_0}
+\mathfrak{A}_i, \overline{a} \vDash \bigvee T
+\Leftrightarrow
+\Psi(\mathfrak{A}_i), \overline{a} \vDash \varphi.
+\end{equation}
+The statement on the right side implies the left side statement by the
+definition of $T$.
+For the other direction, suppose that
+$\mathfrak{A}_i, \overline{a} \vDash \bigvee T$
+and assume to the contrary that
+$\Psi(\mathfrak{A}_i), \overline{a} \nvDash \varphi$.
+By the definition of $T$, there is $j \leq i$ and $\overline{b} \in A_j^m$
+such that $\overline{a}$ and $\overline{b}$ have the same atomic type of $\tau$
+and $\Psi(\mathfrak{A}_j), \overline{b} \vDash \varphi$.
+Since $\Psi(\mathfrak{A}_j) \leq \Psi(\mathfrak{A}_i)$, $Q$ is embedding-closed
+and all $\chi_i$ are quantifier-free, we have
+$\Psi(\mathfrak{A}_i), \overline{b} \vDash \varphi$.
+However, since $\mathfrak{A}_i$ is quasi-homogeneous,
+there is, by Lemma 2.2 and Theorem 5.3, a quantifier-free $\tau$-formula
+$\varphi^*$ such that
+$\mathfrak{A}_i, \overline{a} \nvDash \varphi^*$
+and $\mathfrak{A}_i, \overline{b} \vDash \varphi^*$
+which is a contradiction since $\overline{a}$ and $\overline{b}$ have the
+same atomic types in $\tau$.
+The claim is thus proven.
+
+For each natural number $i \geq k$,
+let $T'_i$ be the set of all atomic types $t$ of $\sigma$
+for which there is a natural number $j$ with
+$k \leq j \leq i$ and $\overline{a} \in A^m_j$ such that
+$\Psi(\mathfrak{A}_j), \overline{a} \vDash t$ and
+$\mathfrak{A}_j, \overline{a} \vDash \bigvee T$.
+The chain $(T'_i)_{i < \omega}$ is clearly monotone and, since $\sigma$ is
+finite and relational, there is a natural
+number $k'$ at which the chain $(T'_i)_{i < \omega}$ reaches
+its maximum.
+Denote $T' = T'_{k'}$.
+We claim that
+\begin{equation}\label{eq_1}
+\Psi(\mathfrak{A}_i), \overline{a} \vDash \bigvee T' \Leftrightarrow
+\mathfrak{A}_i, \overline{a} \vDash \bigvee T
+\end{equation}
+for all $i \geq k'$ and $\overline{a} \in A_i^m$.
+
+"$\Rightarrow$" Suppose we have
+$\Psi(\mathfrak{A}_i), \overline{a} \vDash \bigvee T'$ for some $i \geq k'$
+and $\overline{a} \in A_i^m$.
+Then for some $j$ with $k \leq j \leq k'$ there is $\overline{a} \in A_j^m$ such that
+$\mathfrak{A}_j, \overline{a} \vDash \bigvee T$.
+By (\ref{eq_0}) it follows that $\Psi(\mathfrak{A}_j), \overline{a} \vDash \varphi$
+and, since $\Psi(\mathfrak{A}_j) \leq \Psi(\mathfrak{A}_i)$, we have
+$\Psi(\mathfrak{A}_i), \overline{a} \vDash \varphi$ and thus
+$\mathfrak{A}_i, \overline{a} \vDash \bigvee T$.
+
+"$\Leftarrow$" Let $\mathfrak{A}_i, \overline{a} \vDash \bigvee T$
+for some $i \geq k'$ and $\overline{a} \in A_i^m$.
+Assume to the contrary that
+$\Psi(\mathfrak{A}_i), \overline{a} \nvDash \bigvee T'$.
+Then the atomic type $t$ of $\sigma$ for which
+$\Psi(\mathfrak{A}_i), \overline{a} \vDash t$ is in $T_i$ but not in $T_k'$
+which contradicts the set's $T_k'$ maximality.
+The claim (\ref{eq_1}) thus holds.
+
+Thus, by combining the claims (\ref{eq_0}) and (\ref{eq_1}) we get
 \[
-	T_i = \{t \colon t \text{ is an atomic type and } (\mathfrak{A}_i,\overline{a}) \vDash \varphi \wedge  t \text{ for some } \overline{a} \}.
+	\Psi(\mathfrak{A}_i), \overline{a} \vDash \bigvee T' \Leftrightarrow
+	\Psi(\mathfrak{A}_i), \overline{a} \vDash \varphi
 \]
-Since all $\mathfrak{A}_i$ are quasi-homogeneous, it follows from Theorem
-\ref{homog} and Lemma \ref{atomic_types} that
-\[
-	\mathfrak{A}_i \vDash \forall \overline{x}(\varphi \leftrightarrow \bigvee T_i).
-\]
-Now let $i \leq j < \omega$ and $t \in T_i$. We have
-$(\mathfrak{A}_i,\overline{a}) \vDash \varphi \wedge t$ for some
-$\overline{a}$, so $(\mathfrak{A}_j,\overline{a}) \vDash \varphi \wedge t$ since
-both $\varphi$ and $t$ are preserved by embeddings.
-Thus, $t \in T_j$, so $T_i \subseteq T_j$ always when $i \leq j$.
-Since there are finitely many distinct atomic $n$-types because $\tau$ is finite
-and relational, the chain $(T_i)_{i < \omega}$ reaches its maximum at some
-$k < \omega$. Then $\vartheta = \bigvee T_k$ is a quantifier-free $\tau$-formula
-we want.
+for all $i \geq k'$ and $\overline{a} \in A_i^k$ so we can set
+$N := k'$ and $\vartheta := \bigvee T'$ to get the desired result.
 \end{proof}
 
 \begin{theorem}\label{finite}
-Let $\tau$ be a finite relational vocabulary, $\mathcal{Q}$ a finite set of
-embed\-ding-closed quantifiers of finite width and
-$(\mathfrak{A}_i)_{i<\omega}$ a chain of quasi-ho\-mo\-ge\-neous $\tau$-structures.
+Let $\tau$ and $\sigma$ be finite relational vocabularies,
+$(\Psi, (\psi_R)_{R \in \sigma})$ an
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of
+$\sigma$ in $\tau$, and $(\Psi(\mathfrak{A}_i))_{i < \omega}$
+a chain in which all $\mathfrak{A}_i$ are quasi-homogeneous $\tau$-structures.
+Let $\mathcal{Q}$ be a finite set of embedding-closed quantifiers of finite width.
 For each $m< \omega$, there is a natural number $N_m$ such that for every formula
-$\varphi \in \mathcal{L}^m_{\infty \omega}(\mathcal{Q})[\tau]$ there is a
+$\varphi \in \mathcal{L}^m_{\infty \omega}(\mathcal{Q})[\sigma]$ there is a
 quantifier-free $\tau$-formula $\vartheta_{\varphi}$ such that
 \[
-	\mathfrak{A}_i \vDash \forall \overline{x}(\varphi \leftrightarrow \vartheta_{\varphi})
+	\Psi(\mathfrak{A}_i) \vDash \forall \overline{x}(\varphi
+	\leftrightarrow \vartheta_{\varphi})
 \]
 for all $i \geq N_m$.
-Note that $N_m$ depends on the chain of $\tau$-structures.
+Note that $N_m$ depends on the chain of structures.
 \end{theorem}
 \begin{proof}
-Let $\psi_0,\dots,\psi_l$ be an enumeration of all (up to equivalence) the
-$\tau$-formulas in at most $m$ variables having form
+Let $\chi_0,\dots,\chi_l$ be an enumeration of all (up to equivalence) the
+$\sigma$-formulas in at most $m$ variables having form
 $Q(\overline{x}_i\vartheta_i)_{i<n}$ with $Q \in \mathcal{Q}$ and all
 $\vartheta_i$ quantifier-free.
 Note that $l$ is finite.
-By Lemma \ref{quant_elim_finite_lemma} for each $\psi_i$ there is
-$k_i < \omega$ and a quantifier-free $\tau$-formula $\vartheta$ such that
+By Lemma \ref{quant_elim_finite_lemma} for each $\chi_i$ there is
+$k_i < \omega$ and a quantifier-free $\sigma$-formula $\vartheta$ such that
 \[
-	\mathfrak{A}_j \vDash \forall \overline{x} (\psi_i \leftrightarrow \vartheta)
+	\Psi(\mathfrak{A}_j) \vDash \forall \overline{x} (\chi_i \leftrightarrow \vartheta)
 \]
 when $j \geq k_i$.
 We claim that we can set $N_m := \max\{k_i : i \leq l\}$.
@@ -959,17 +1032,19 @@ The cases of $\varphi$ atomic, $\varphi = \neg \alpha$ and
 $\varphi = \bigwedge_{i \in I}\alpha_i$ are clear.
 Suppose $\varphi = Q(\overline{x}_i\alpha_i)_{i<n}$ and the claim holds for all
 $\alpha_i$.
-Then for each $i < n$ there is a quantifier-free $\tau$-formula $\vartheta_i$
+Then for each $i < n$ there is a quantifier-free $\sigma$-formula $\vartheta_i$
 such that
 \[
-	\mathfrak{A}_j \vDash \forall \overline{y}(\alpha_i \leftrightarrow \vartheta_i)
+	\Psi(\mathfrak{A}_j) \vDash \forall \overline{y}(\alpha_i
+	\leftrightarrow \vartheta_i)
 \]
 for all $j \geq N_m$ so
 \[
-	\mathfrak{A}_j \vDash \forall \overline{y}(\varphi \leftrightarrow Q(\overline{x}_i\vartheta_i)_{i<n})
+	\Psi(\mathfrak{A}_j) \vDash \forall \overline{y}(\varphi
+	\leftrightarrow Q(\overline{x}_i\vartheta_i)_{i<n})
 \]
 when $j \geq N_m$. Thus, if $j \geq N_m$, then $\varphi$ is equivalent to some
-$\psi_r$ and therefore to some quantifier-free formula $\vartheta$, so we can
+$\chi_r$ and therefore to some quantifier-free formula $\vartheta$, so we can
 set $\vartheta_{\varphi} := \vartheta$.
 \end{proof}
 
@@ -990,13 +1065,15 @@ $\mathcal{L}[\tau^*]$.
 \end{definition}
 
 \begin{corollary}\label{finite2}
-Let $\tau$ be a finite relational vocabulary, $\mathcal{Q}$ a finite set of
-embed\-ding-closed quantifiers of finite width and
-$(\mathfrak{A}_i)_{i<\omega}$ a chain of quasi-ho\-mo\-ge\-neous $\tau$-structures.
-Let $m<\omega$ and
-write $\mathcal{L} = \mathcal{L}_{\infty\omega}^m(\mathcal{Q})$.
-There is a natural number $N_m$ such that
-$\mathfrak{A}_i \preceq_{\mathcal{L}} \mathfrak{A}_j$ for all $j \geq i \geq N_m$.
+Let $\tau$ and $\sigma$ be finite relational vocabularies and suppose
+$\mathcal{Q}$ is a finite set of embedding-closed quantifiers of finite width.
+Let $m < \omega$, and write
+$\mathcal{L} = \mathcal{L}^m_{\infty\omega}(\mathcal{Q})$.
+Suppose $(\mathfrak{A}_i)_{i<\omega}$ is a chain of quasi-homogeneous
+$\tau$-structures and $(\Psi,(\psi_R)_{R\in\sigma})$ is an
+$\mathcal{L}$-interpretation of $\sigma$ in $\tau$.
+There is a natural number $N_m$ such that for all $j \geq i \geq N_m$ we have
+$\Psi(\mathfrak{A}_i) \preceq_{\mathcal{L}} \Psi(\mathfrak{A}_j)$.
 \end{corollary}
 
 \begin{example}\label{groups}
@@ -1085,51 +1162,14 @@ In the next subsection we will show that in fact the H\"artig quantifier is not
 definable in the logic $\mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})$ either.
 \end{example}
 
-
-As we saw in Example \ref{hom_graphs}, there are only few homogeneous finite
-graphs, so we cannot usually directly apply Corollary \ref{finite2} in studying
-definability of graph properties.
-The following theorem shows that this situation can be remedied to some extent
-by using \emph{interpretations}.
-
-\begin{theorem}\label{inter}
-Let $\tau$ and $\sigma$ be finite relational vocabularies and suppose
-$\mathcal{Q}$ is a finite set of embedding-closed quantifiers of finite width.
-Let $m < \omega$, and write
-$\mathcal{L} = \mathcal{L}^m_{\infty\omega}(\mathcal{Q})$.
-Suppose $(\mathfrak{A}_i)_{i<\omega}$ is a chain of quasi-homogeneous
-$\tau$-structures and $(\Psi,(\psi_R)_{R\in\sigma})$ is an
-$\mathcal{L}$-interpretation of $\sigma$ in $\tau$.
-There is a natural number $N_m$ such that for all $j \geq i \geq N_m$ we have
-$\Psi(\mathfrak{A}_i) \preceq_{\mathcal{L}} \Psi(\mathfrak{A}_j)$.
-\end{theorem}
-\begin{proof}
-By Corollary \ref{finite2}, there is a natural number $N'_m$ such that
-$\mathfrak{A}_i \preceq_{\mathcal{L}} \mathfrak{A}_j$ for all $j\geq i \geq N'_m$.
-We claim that $N'_m$ is a wanted number $N_m$.
-To show that, let $\varphi \in \mathcal{L}[\sigma]$.
-By Lemma \ref{interpr}, there is a formula $\varphi^* \in \mathcal{L}[\tau]$ such that
-\[
-	\mathfrak{A}_i, \overline{a} \vDash \varphi^* \Leftrightarrow \Psi(\mathfrak{A}_i), \overline{a} \vDash \varphi
-\]
-for all $i<\omega$ and tuples $\overline{a}$ of elements of $A$.
-Let $j \geq i \geq N'_m$ and suppose that
-$\Psi(\mathfrak{A}_i),\overline{a} \vDash \varphi$.
-Then we have
-$\mathfrak{A}_i,\overline{a} \vDash \varphi^*$,
-so $\mathfrak{A}_j, \overline{a} \vDash \varphi^*$ from which follows
-$\Psi(\mathfrak{A}_j), \overline{a} \vDash \varphi$.
-The claim is thus proved.
-\end{proof}
-
-\begin{example}
+\begin{example}\label{reg_graph_ex}
 A graph $G$ is \emph{regular} if every vertex of $G$ has the same number of neighbours.
 We will show that regularity of a graph is not definable in the logic
 $\mathcal{L} = \mathcal{L}^{\omega}_{\infty \omega}(Q_1,\dots,Q_n)$ where all
 $Q_i \in \mathcal{Q}_{\emb}$ have finite width.
 Let $\tau$ be the same vocabulary and $(\mathfrak{A}_i)_{i<\omega}$ a chain of
 $\tau$-structures as in Example \ref{Hartig_ex}.
-Let $\sigma = \{E\}$ where $E$ is a relation symbol and suppose
+Let $\sigma = \{E\}$ where $E$ is a binary relation symbol and suppose
 $(\Psi,\psi)$ is an interpretation of $\sigma$ in $\tau$ where
 \[
 	\psi(x,y) := (U(x)\wedge U(y)) \vee (V(x) \wedge V(y)).
@@ -1144,7 +1184,7 @@ Then for all $k<\omega$,
 where every $K_m$ is the complete graph on $m$ vertices and $+$ means disjoint
 union (cf. Example \ref{hom_graphs}).
 Thus, a graph $\Psi(\mathfrak{A}_k)$ is regular if and only if $k$ is odd,
-so by Theorem \ref{inter} regularity of graphs is not definable in $\mathcal{L}$.
+so by Corollary \ref{finite2} regularity of graphs is not definable in $\mathcal{L}$.
 \end{example}
 
 We will need the following lemmas in the proof of Theorem \ref{log_eq}.
