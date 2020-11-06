@@ -269,7 +269,8 @@ We denote by $\ar(R)$ and $\ar(f)$ the \emph{arities} of relation and function
 symbols, respectively.
 A \emph{$\tau$-structure} $\mathfrak{A}$ is a sequence
 \[
-	\mathfrak{A} = (A,R^{\mathfrak{A}},\dots,f^{\mathfrak{A}},\dots,c^{\mathfrak{A}},\dots),
+	\mathfrak{A} = (A,R^{\mathfrak{A}},\dots,f^{\mathfrak{A}},\dots,
+	c^{\mathfrak{A}},\dots),
 \]
 where $A$ is a set that we call the \emph{universe} of $\mathfrak{A}$,
 and $R^{\mathfrak{A}}\subseteq A^{\ar(R)},\dots$ are interpretations of symbols
@@ -279,7 +280,9 @@ We denote the number of free variables of $\varphi$ by $\frvar(\varphi)$.
 If $\mathfrak{A}\in\Str[\tau]$ and $\varphi \in \mathcal{L}[\tau]$, then we
 write
 \[
-	\varphi^{\mathfrak{A}} = \{\overline{a} \in A^{\frvar(\varphi)} \colon \mathfrak{A},\overline{a} \vDash \varphi  \}.
+	\varphi^{\mathfrak{A}} = 
+	\{\overline{a} \in A^{\frvar(\varphi)} \colon 
+	\mathfrak{A},\overline{a} \vDash \varphi  \}.
 \]
 
 Let $\tau'$ be an extension of $\tau$ and $\mathfrak{A}'$ a $\tau'$-structure.
@@ -292,7 +295,8 @@ An \emph{atomic $n$-type} of $\tau$ is a set $\Phi$ of literals of $\tau$ in
 variables $x_1,\dots,x_n$ such that there is a $\tau$-structure $\mathfrak{A}$
 and $n$-tuple $\overline{a}$ of elements in $A$ with
 \[
-	\Phi = \{\varphi \colon \mathfrak{A},\overline{a} \vDash \varphi \text{ and } \varphi \text{ is a literal of }\tau \}.
+	\Phi = \{\varphi \colon \mathfrak{A},\overline{a} \vDash \varphi 
+	\text{ and } \varphi \text{ is a literal of }\tau \}.
 \]
 If $\mathcal{L}$ is a logic, $\Phi$ an atomic type and there is an
 $\mathcal{L}$-formula $t$ logically equivalent to $\bigwedge \Phi$,
@@ -303,7 +307,8 @@ then $t$ is also called an atomic type.
 Let $\vartheta$ be a quantifier-free $\tau$-formula in $n$ free variables.
 Then there exists a set $T$ of atomic $n$-types of $\tau$ such that
 \[
-	\vDash \vartheta \leftrightarrow \bigvee_{\Phi\in T} \bigwedge_{\varphi\in\Phi} \varphi.
+	\vDash \vartheta \leftrightarrow 
+	\bigvee_{\Phi\in T} \bigwedge_{\varphi\in\Phi} \varphi.
 \]
 \end{lemma}
 
@@ -367,7 +372,8 @@ $\sigma$ in $\tau$.
 Then for each $\mathcal{L}[\sigma]$-formula $\varphi$ there is an
 $\mathcal{L}[\tau]$-formula $\varphi^*$ such that
 \[
-	\mathfrak{A},\overline{a} \vDash \varphi* \Leftrightarrow \Psi(\mathfrak{A}),\overline{a} \vDash \varphi
+	\mathfrak{A},\overline{a} \vDash \varphi* 
+	\Leftrightarrow \Psi(\mathfrak{A}),\overline{a} \vDash \varphi
 \]
 for all $\mathfrak{A} \in \Str[\tau]$ and tuples $\overline{a}$ of elements in
 $A$.
@@ -446,7 +452,8 @@ Suppose that
 $(\mathfrak{A},\overline{a}) \vDash Q(\overline{x}_{\alpha} \varphi_{\alpha})_{\alpha < \kappa}$
 and $f \colon A \rightarrow B$ is an embedding.
 Then $f$ is also an embedding of
-$(A,(\varphi_{\alpha}^{\mathfrak{A},\overline{a}})_{\alpha < \kappa})$ into $(B,(\varphi_{\alpha}^{\mathfrak{B},f\overline{a}})_{\alpha < \kappa})$ since
+$(A,(\varphi_{\alpha}^{\mathfrak{A},\overline{a}})_{\alpha < \kappa})$ into
+$(B,(\varphi_{\alpha}^{\mathfrak{B},f\overline{a}})_{\alpha < \kappa})$ since
 quantifier-free formulas are preserved by embeddings, so
 $(\mathfrak{B},f\overline{a}) \vDash Q(\overline{x}_{\alpha} \varphi_{\alpha})_{\alpha < \kappa}$
 since $Q$ is embedding-closed.
@@ -463,7 +470,9 @@ The expressive power of $\mathcal{Q}_{\sub}$ is clearly the same as that of
 $\mathcal{Q}_{\emb}$ since the complement $Q^*$ of an embedding-closed quantifier
 $Q$ is substructure-closed and vice versa, so
 \[
-	\mathfrak{A} \vDash Q(\overline{x}_{\alpha}\varphi_{\alpha})_{\alpha < \kappa} \Leftrightarrow  \mathfrak{A} \vDash \neg Q^*(\overline{x}_{\alpha}\varphi_{\alpha})_{\alpha < \kappa}.
+	\mathfrak{A} \vDash Q(\overline{x}_{\alpha}\varphi_{\alpha})_{\alpha < \kappa} 
+	\Leftrightarrow  \mathfrak{A} \vDash 
+	\neg Q^*(\overline{x}_{\alpha}\varphi_{\alpha})_{\alpha < \kappa}.
 \]
 
 Next we present some examples of well-known properties and quantifiers that are
@@ -490,7 +499,9 @@ which is clearly embedding-closed.
 of a single $n$-ary relation symbol.
 The \emph{Magidor-Malitz} quantifier $Q_{\alpha}^n$, whose defining class is
 \[
-	\{ \mathfrak{A} \in \Str[\sigma_n] \colon \text{ there is } C \subseteq A \text{ with } |C| \geq \aleph_{\alpha} \text{ and } C^n \subseteq M_n^{\mathfrak{A}}\},
+	\{ \mathfrak{A} \in \Str[\sigma_n] \colon 
+	\text{ there is } C \subseteq A \text{ with } |C| \geq \aleph_{\alpha} 
+	\text{ and } C^n \subseteq M_n^{\mathfrak{A}}\},
 \]
 is embedding-closed.
 
@@ -567,25 +578,30 @@ $R_*^{F(\mathfrak{A})} = (\neg R)^{\mathfrak{A}}$ for all $R \in \tau$,
 and $N^{F(\mathfrak{A})} = (x\ne y)^{\mathfrak{A}}$.
 Now let
 \[
-	K' = \{\mathfrak{A}\in\tau' \colon \text{ there is } \mathfrak{B} \in K \text{ and a homomorphism }f \colon F(\mathfrak{B})\rightarrow \mathfrak{A} \}.
+	K' = \{\mathfrak{A}\in\tau' \colon \text{ there is } \mathfrak{B} \in K 
+	\text{ and a homomorphism }f \colon F(\mathfrak{B})\rightarrow \mathfrak{A} \}.
 \]
 Then $K'$ is homomorphism-closed since the composition of two homomorphisms is
 itself a homomorphism.
 Let $\psi$ be the following sentence of $\mathcal{L}(\mathcal{Q}_{\hom})$:
 \[
-	\psi := Q_{K'}((\overline{x}_RR)_{R\in\tau},(\overline{y}_R\neg R)_{R\in\tau},uv(u\ne v)).
+	\psi := Q_{K'}((\overline{x}_RR)_{R\in\tau},
+	(\overline{y}_R\neg R)_{R\in\tau},uv(u\ne v)).
 \]
 We claim that $\psi$ defines the class $K$. To show this, suppose first that
 $\mathfrak{A} \in \Str[\tau]$ is such that $\mathfrak{A}\vDash \psi$.
 Then by the definition of $K'$ there is $\mathfrak{B} \in K$ and a homomorphism
 \[
-	f \colon F(\mathfrak{B}) \rightarrow (A,(R^{\mathfrak{A}})_{R\in\tau},(\neg R^{\mathfrak{A}})_{R\in\tau},(x\ne y)^{\mathfrak{A}})
+	f \colon F(\mathfrak{B}) \rightarrow 
+	(A,(R^{\mathfrak{A}})_{R\in\tau},(\neg R^{\mathfrak{A}})_{R\in\tau},
+	(x\ne y)^{\mathfrak{A}})
 \]
 which is in fact an embedding of $\mathfrak{B}$ into $\mathfrak{A}$ so,
 since $K$ is embedding-closed, we have $\mathfrak{A} \in K$.
 For the other direction, if $\mathfrak{A}\in K$ then $F(\mathfrak{A}) \in K'$ so
 \[
-	(A,(R^{\mathfrak{A}})_{R\in\tau},(\neg R^{\mathfrak{A}})_{R\in\tau},(x\ne y)^{\mathfrak{A}}) \in K'
+	(A,(R^{\mathfrak{A}})_{R\in\tau},(\neg R^{\mathfrak{A}})_{R\in\tau},
+	(x\ne y)^{\mathfrak{A}}) \in K'
 \]
 from which it follows that $\mathfrak{A} \vDash \psi$.
 Thus, $K$ is definable in $\mathcal{L}(\mathcal{Q}_{\hom})$ so by Lemma
@@ -646,7 +662,10 @@ $n<\omega$.
 Suppose that $t$ is the atomic type of $\overline{a}$ and
 set
 \[
-	P = \{\mathfrak{B} \in \Str[\tau] \colon \text{for all } \overline{b} \in B^n, \text{ if } \mathfrak{B} \vDash t(\overline{b}) \text{ then } (\mathfrak{A},\overline{a}) \leq (\mathfrak{B},\overline{b}) \}.
+	P = \{\mathfrak{B} \in \Str[\tau] \colon 
+	\text{for all } \overline{b} \in B^n, 
+	\text{ if } \mathfrak{B} \vDash t(\overline{b}) 
+	\text{ then } (\mathfrak{A},\overline{a}) \leq (\mathfrak{B},\overline{b}) \}.
 \]
 Then $\mu(P) = 1$.
 \end{lemma}
@@ -673,8 +692,10 @@ has asymptotic probability $1$.
 \begin{proof}
 Write $\varphi := Q(\overline{y}_i\psi_i)_{i < k}$, and set
 \begin{align*}
-	\vartheta := \bigvee\{t \colon &t \text{ is an atomic type and } (\mathfrak{A},\overline{a}) \vDash t \land \varphi \\
-	&\text{ for some finite } \tau \text{-structure } \mathfrak{A} \text{ and tuple }\overline{a}\}.
+	\vartheta := \bigvee\{t \colon &t \text{ is an atomic type and }
+	(\mathfrak{A},\overline{a}) \vDash t \land \varphi \\
+	&\text{ for some finite } \tau \text{-structure } \mathfrak{A} 
+	\text{ and tuple }\overline{a}\}.
 \end{align*}
 
 We clearly have
@@ -745,12 +766,14 @@ Then for each $i<n$ there is a quantifier-free formula $\vartheta_i$ such that
 \]
 for every $\mathfrak{A} \in C$ so
 \[
-	\mathfrak{A} \vDash \forall \overline{x}(\varphi \leftrightarrow Q(\overline{y}_i\vartheta_i)_{i < n})
+	\mathfrak{A} \vDash \forall \overline{x}(\varphi 
+	\leftrightarrow Q(\overline{y}_i\vartheta_i)_{i < n})
 \]
 for all $\mathfrak{A} \in C$.
 Since $Q(\overline{y}_i\vartheta_i)_{i<n} = \psi_m$ for some $m < l$, we have
 \[
-	\mathfrak{A} \vDash \forall \overline{x}(Q(\overline{y}_i\vartheta_i)_{i < n} \leftrightarrow \chi_m)
+	\mathfrak{A} \vDash \forall \overline{x}(Q(\overline{y}_i\vartheta_i)_{i < n} 
+	\leftrightarrow \chi_m)
 \]
 for all $\mathfrak{A} \in C_m$, and therefore for all $\mathfrak{A} \in C$,
 because $C \subseteq C_m$.
@@ -767,7 +790,8 @@ the logic $\mathcal{L}^{\omega}_{\infty\omega}(\mathcal{Q})$ has a $0$-$1$ law.
 \end{corollary}
 
 
-\section{Quantifier Elimination for $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$ and \\ some Undefinability Results}\label{chain_section}
+\section{Quantifier Elimination for $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$ 
+	and \\ some Undefinability Results}\label{chain_section}
 
 In this section we introduce a method that allows us to study the limits of what
 can be expressed by logics of the form
@@ -784,7 +808,7 @@ An example of such a property is equicardinality of unary predicates in finite
 structures whose undefinability does not follow immediately from a $0$-$1$ law.
 
 Another nice feature of our method is that it can be applied to a wider range of
-logics that may have infinitely many embedding-closed quantifiersmof arbitrary
+logics that may have infinitely many embedding-closed quantifiers of arbitrary
 width.
 Thus we will show that, for instance, equicardinality of unary predicates in the
 class of all structures cannot be defined in
@@ -838,12 +862,14 @@ $\mathfrak{A}'\upharpoonright \tau = \mathfrak{A}$ and
 $P^{\mathfrak{A}'} = \{\overline{a}\}$.
 Let $Q$ be the embedding-closed quantifier whose defining class is
 \[
-	K_Q = \{\mathfrak{B} \in \Str[\tau'] \colon \mathfrak{A}' \text{ is embeddable into } \mathfrak{B}\},
+	K_Q = \{\mathfrak{B} \in \Str[\tau'] \colon \mathfrak{A}' 
+	\text{ is embeddable into } \mathfrak{B}\},
 \]
 and suppose $\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})[\tau]$
 is the next formula:
 \[
-	\varphi(\overline{z}) := Q((\overline{x}_RR)_{R\in\tau},\overline{x}_P(\overline{x}_P=\overline{z})).
+	\varphi(\overline{z}) :=
+	Q((\overline{x}_RR)_{R\in\tau},\overline{x}_P(\overline{x}_P=\overline{z})).
 \]
 Then $\mathfrak{A} \vDash \varphi(\overline{a})$ and, since $\mathfrak{A}$ has
 quantifier elimination and $\overline{a}$ and $\overline{b}$ have the same
@@ -860,7 +886,9 @@ Now set $\varphi := Q(\overline{x}_R\psi_R)_{R \in \tau_Q}$ and denote by $k$
 the number of free variables of $\varphi$.
 Let
 \[
-	\vartheta = \bigvee\{t \colon t \text{ is an atomic type and for some } \overline{a} \in A^k, (\mathfrak{A}, \overline{a}) \vDash \varphi \wedge t\}.
+	\vartheta = \bigvee\{t \colon 
+	t \text{ is an atomic type and for some } 
+	\overline{a} \in A^k, (\mathfrak{A}, \overline{a}) \vDash \varphi \wedge t\}.
 \]
 Let $\overline{b} \in A^k$ and $(\mathfrak{A}, \overline{b}) \vDash \vartheta$.
 Then $(\mathfrak{A},\overline{b}) \vDash t$ and
@@ -878,7 +906,8 @@ $\mathfrak{A} \vDash \forall \overline{x}(\varphi \rightarrow \vartheta)$,
 we have
 $\mathfrak{A} \vDash \forall \overline{x}(\vartheta \leftrightarrow \varphi)$.
 
-Thus, by using induction, we can eliminate quantifiers in all $\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})$.
+Thus, by using induction, we can eliminate quantifiers in all 
+$\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})$.
 \end{proof}
 
 
@@ -1155,7 +1184,8 @@ Then $\mathfrak{A}_i \leq\mathfrak{A}_{i+1}$ for all $i<\omega$, and
 $|U^{\mathfrak{A}_i}|=|V^{\mathfrak{A}_i}|$ if and only if $i$ is odd.
 Thus, it follows from Corollary \ref{finite2} that the class
 \[
-	\{\mathfrak{A} \in \Str[\tau] : \mathfrak{A} \text{ is finite and }|U^{\mathfrak{A}}| = |V^{\mathfrak{A}}| \}
+	\{\mathfrak{A} \in \Str[\tau] : 
+	\mathfrak{A} \text{ is finite and }|U^{\mathfrak{A}}| = |V^{\mathfrak{A}}| \}
 \]
 is not definable in the logic $\mathcal{L}^{\omega}_{\infty \omega}(\mathcal{Q})$.
 In the next subsection we will show that in fact the H\"artig quantifier is not
@@ -1272,7 +1302,8 @@ Now for all $i < \omega$ we define sets $\mathcal{H}_i \subseteq \mathcal{H}$
 and $\tau$-structures $\mathfrak{A}_i$ by setting $\mathcal{H}_0 = \mathcal{H}'$,
 $\mathfrak{A}_i = F(\mathcal{H}_i)$ and
 \[
-\mathcal{H}_{i+1} = \mathcal{H}_i \setminus \{ \mathfrak{B} \in \mathcal{H} \colon \mathfrak{B} \leq \mathfrak{A}_i \text{ or } \mathfrak{A}_i \leq \mathfrak{B} \}.
+	\mathcal{H}_{i+1} = \mathcal{H}_i \setminus \{ \mathfrak{B} \in \mathcal{H} \colon 
+	\mathfrak{B} \leq \mathfrak{A}_i \text{ or } \mathfrak{A}_i \leq \mathfrak{B} \}.
 \]
 Note that $\mathcal{H}_i \subseteq \mathcal{H}_j$ when $i \geq j$.
 Let $I = \{i<\omega \colon \mathfrak{A}_i \ne \emptyset \}$.
@@ -1289,7 +1320,8 @@ Thus, $\{\mathfrak{A}_i\colon i\in I \}$ is an antichain whose cardinality is
 finite by Lemma \ref{shrinking}, and we have
 $\mathcal{H} = \mathcal{G}_0 \cup \mathcal{G}_1$ where
 \[
-\mathcal{G}_0 = \{\mathfrak{B}\in\mathcal{H} \colon \mathfrak{B} \lneq \mathfrak{A}_i \text{ for some } i \in I \}
+	\mathcal{G}_0 = \{\mathfrak{B}\in\mathcal{H} \colon 
+	\mathfrak{B} \lneq \mathfrak{A}_i \text{ for some } i \in I \}
 \]
 is finite up to isomorphism,
 and for all $\mathfrak{B} \in \mathcal{G}_1$,
@@ -1338,11 +1370,13 @@ $\mathcal{L}_{\omega\omega}$-sentence $\psi$ and a class
 $S \subseteq \mathcal{H}$ such that $S$ is finite up to isomorphism and for all
 $\mathfrak{A} \in \mathcal{H}$ we have
 \[
-	\mathfrak{A} \vDash \psi \Leftrightarrow \mathfrak{A} \vDash \varphi \text{ and } \mathfrak{A} \notin S,
+	\mathfrak{A} \vDash \psi 
+	\Leftrightarrow \mathfrak{A} \vDash \varphi \text{ and } \mathfrak{A} \notin S,
 \]
 from which it follows that for all $\mathfrak{A} \in \mathcal{H}$ we have
 \[
-	\mathfrak{A} \vDash \psi \vee \bigvee_{\mathfrak{B} \in S} \chi_{\mathfrak{B}} \Leftrightarrow \mathfrak{A} \vDash \varphi,
+	\mathfrak{A} \vDash \psi \vee \bigvee_{\mathfrak{B} \in S} \chi_{\mathfrak{B}} 
+	\Leftrightarrow \mathfrak{A} \vDash \varphi,
 \]
 where each $\chi_{\mathfrak{B}}$ is a $\Sigma_2^0$ sentence of
 $\mathcal{L}_{\omega \omega}$ that describes the isomorphism type of $\mathfrak{B}$.
@@ -1372,7 +1406,8 @@ There is a cardinal $\mu<\lambda$ such that for every formula
 $\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q})$ there is a quantifier-free
 $\tau$-formula $\vartheta_{\varphi}$ such that
 \[
-	\mathfrak{A}_{\alpha} \vDash \forall \overline{x}(\varphi \leftrightarrow \vartheta_{\varphi})
+	\mathfrak{A}_{\alpha} \vDash \forall \overline{x}(\varphi 
+	\leftrightarrow \vartheta_{\varphi})
 \]
 for all $\alpha \geq \mu$.
 In particular,
@@ -1432,8 +1467,10 @@ $\tau$-structures, then $\mathfrak{A} \equiv_{\emb} \mathfrak{B}$.
 \begin{proof}
 We can build a chain of arbitrary length in which structures $\mathfrak{A}$ and
 $\mathfrak{B}$ alternate.
-By Theorem \ref{infinite} the truth value of any sentence $\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})$ is eventually preserved in this
-chain, so $\mathfrak{A} \vDash \varphi \Leftrightarrow \mathfrak{B} \vDash \varphi$.
+By Theorem \ref{infinite} the truth value of any sentence 
+$\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})$ 
+is eventually preserved in this chain, so 
+$\mathfrak{A} \vDash \varphi \Leftrightarrow \mathfrak{B} \vDash \varphi$.
 \end{proof}
 
 \begin{example}\label{completeness}
@@ -1512,11 +1549,13 @@ A \emph{position} in the game is a tuple
 $(\mathfrak{A},\overline{a},\mathfrak{B},\overline{b},\gamma)$, where
 $\overline{a}$ and $\overline{b}$ are $n$-tuples of elements of $A$ and $B$,
 respectively, for some $n < \omega$, and $\gamma<\omega_1$ is an ordinal.
-The tuples $\overline{a}$ and $\overline{b}$ can be empty in which case we write $(\mathfrak{A},\mathfrak{B},\gamma)$ instead of
+The tuples $\overline{a}$ and $\overline{b}$ can be empty in which case we write
+$(\mathfrak{A},\mathfrak{B},\gamma)$ instead of
 $(\mathfrak{A},\emptyset,\mathfrak{B},\emptyset,\gamma)$.
 The game proceeds in rounds and starts from the position
 $(\mathfrak{A},\mathfrak{B},\gamma)$ for some $\gamma < \omega_1$.
-Suppose that $m$ rounds of the game have been played and the position is $(\mathfrak{A},\overline{a},\mathfrak{B},\overline{b},\gamma)$.
+Suppose that $m$ rounds of the game have been played and the position is
+$(\mathfrak{A},\overline{a},\mathfrak{B},\overline{b},\gamma)$.
 If $\gamma > 0$, then Duplicator must choose embeddings
 $f \colon A \rightarrow B$ and $g \colon B \rightarrow A$ such that
 $f\overline{a} = \overline{b}$ and $g\overline{b} = \overline{a}$.
@@ -1524,7 +1563,9 @@ If there are no such embeddings, then the game ends and Spoiler wins the game.
 Otherwise Spoiler selects a natural number $k$ and either a tuple
 $\overline{c} \in A^k$ or a tuple $\overline{d} \in B^k$.
 In addition, he picks an ordinal $\beta<\gamma$.
-This completes the round, and the game continues from the position $(\mathfrak{A},\overline{a}\overline{c},\mathfrak{B},\overline{b}f\overline{c},\beta)$ or $(\mathfrak{A},\overline{a}g\overline{d},\mathfrak{B},\overline{b}\overline{d},\beta)$
+This completes the round, and the game continues from the position
+$(\mathfrak{A},\overline{a}\overline{c},\mathfrak{B},\overline{b}f\overline{c},\beta)$
+or $(\mathfrak{A},\overline{a}g\overline{d},\mathfrak{B},\overline{b}\overline{d},\beta)$
 depending on whether Spoiler chose $\overline{c} \in A^n$ or $\overline{d} \in B^n$.
 If $\gamma = 0$, then the game ends and Duplicator wins if and only if the tuples
 $\overline{a}$ and $\overline{b}$ have the same atomic type. Otherwise Spoiler wins.
@@ -1542,7 +1583,8 @@ we define inductively its \emph{quantifier rank} denoted by $\qr(\varphi)$ by se
 	\qr(\varphi) &= 0 \text{ if } \varphi \text{ is quantifier-free}, \\
 	\qr(\neg\varphi) &= \qr(\varphi), \\
 	\qr(\bigvee\Phi) &= \qr(\bigwedge\Phi) = \sup\{\qr(\varphi) \colon \varphi \in \Phi\}, \\
-	\qr(Q(\overline{x}_{\delta}\varphi_{\delta})_{\delta<\kappa}) &= \sup\{\qr(\varphi_{\delta}) \colon \delta < \kappa \} + 1.
+	\qr(Q(\overline{x}_{\delta}\varphi_{\delta})_{\delta<\kappa}) 
+	&= \sup\{\qr(\varphi_{\delta}) \colon \delta < \kappa \} + 1.
 \end{align*}
 We write $\mathfrak{A} \simeq^{\gamma}_{\emb} \mathfrak{B}$ if Duplicator wins
 the embedding game starting from the position $(\mathfrak{A},\mathfrak{B},\gamma)$,
@@ -1568,7 +1610,8 @@ $\overline{c} \mapsto f(\overline{c})$ is not a partial isomorphism on the
 elements of $\overline{c}$ between the structures $(\mathfrak{A},\overline{a})$
 and $(\mathfrak{B},\overline{b})$ where $\overline{a}$ and $\overline{b}$ are
 elements chosen in the previous rounds of the game.
-Otherwise the game continues to the next round from the position $(\mathfrak{A},\overline{a}\overline{c},\mathfrak{B},\overline{b}f(\overline{c}))$.
+Otherwise the game continues to the next round from the position
+$(\mathfrak{A},\overline{a}\overline{c},\mathfrak{B},\overline{b}f(\overline{c}))$.
 The $n$-bijective game characterizes the equivalence of structures in relation
 to the logic $\mathcal{L}_{\infty\omega}$ extended with the class of all
 generalized quantifiers of arity $\leq n$.
@@ -1589,7 +1632,8 @@ positions explicitly.
 \begin{theorem}\label{game}
 	Let $\tau$ be vocabulary and $\mathfrak{A}$, $\mathfrak{B}$ $\tau$-structures.
 	For all ordinals $\gamma < \omega_1$ we have $
-	\mathfrak{A} \simeq_{\emb}^{\gamma} \mathfrak{B} \text{ if and only if } \mathfrak{A} \equiv_{\emb}^{\gamma} \mathfrak{B}$.
+	\mathfrak{A} \simeq_{\emb}^{\gamma} \mathfrak{B} \text{ if and only if } 
+	\mathfrak{A} \equiv_{\emb}^{\gamma} \mathfrak{B}$.
 \end{theorem}
 \begin{proof}
 We use induction on $\gamma$.
@@ -1619,13 +1663,15 @@ Thus, by the induction hypothesis,
 $(\mathfrak{A},\overline{a})\equiv^{\alpha}_{\emb}(\mathfrak{B},f\overline{a})$
 for all $\alpha<\gamma$ so
 \[
-	\mathfrak{A} \vDash \psi_{\delta}(\overline{a}) \Leftrightarrow \mathfrak{B} \vDash \psi_{\delta}(f\overline{a})
+	\mathfrak{A} \vDash \psi_{\delta}(\overline{a}) \Leftrightarrow 
+	\mathfrak{B} \vDash \psi_{\delta}(f\overline{a})
 \]
 for all $\delta<\kappa$ since $\qr(\psi_{\delta}) < \gamma$ by the definition of
 quantifier rank and the fact that $\qr(\varphi) \leq \gamma$.
 This means that $f$ is an embedding
 \[
-	(A, (\psi_{\delta}^{\mathfrak{A}})_{\delta < \kappa}) \rightarrow (B, (\psi_{\delta}^{\mathfrak{B}})_{\delta < \kappa}),
+	(A, (\psi_{\delta}^{\mathfrak{A}})_{\delta < \kappa}) \rightarrow 
+	(B, (\psi_{\delta}^{\mathfrak{B}})_{\delta < \kappa}),
 \]
 so $\mathfrak{B} \vDash Q(\overline{x}_{\delta} \psi_{\delta})_{\delta < \kappa}$
 since $Q$ is embedding-closed.
@@ -1649,8 +1695,10 @@ for some $\alpha < \gamma$.
 Thus, by the induction hypothesis, for each pair of embeddings $(f,g)$ there is
 a formula $\psi_f$ or a formula $\psi_g$ of quantifier rank $< \gamma$, such that
 \begin{align*}
-	(*)\ &\mathfrak{A} \vDash \psi_f(\overline{a}) \nLeftrightarrow \mathfrak{B} \vDash \psi_f(f\overline{a}) \text{ or } \\
-	&\mathfrak{A} \vDash \psi_g(g\overline{b}) \nLeftrightarrow \mathfrak{B} \vDash \psi_g(\overline{b})
+	(*)\ &\mathfrak{A} \vDash \psi_f(\overline{a}) \nLeftrightarrow 
+	\mathfrak{B} \vDash \psi_f(f\overline{a}) \text{ or } \\
+	&\mathfrak{A} \vDash \psi_g(g\overline{b}) \nLeftrightarrow 
+	\mathfrak{B} \vDash \psi_g(\overline{b})
 \end{align*}
 for some $\overline{a} \in A^{<\omega}$ or $\overline{b} \in B^{<\omega}$.
 Let $Q_A$ be the smallest embedding-closed quantifier containing the structure
@@ -1669,8 +1717,10 @@ Then there are embeddings
 \end{align*}
 so there are embeddings $f$ and $g$ such that
 \begin{align*}
-	\mathfrak{A} \vDash \psi_f(\overline{a}) &\Leftrightarrow \mathfrak{B} \vDash \psi_f(f\overline{a}) \text{ and }\\
-	\mathfrak{A} \vDash \psi_g(g\overline{b}) &\Leftrightarrow \mathfrak{B} \vDash \psi_g(\overline{b})
+	\mathfrak{A} \vDash \psi_f(\overline{a}) &\Leftrightarrow 
+	\mathfrak{B} \vDash \psi_f(f\overline{a}) \text{ and }\\
+	\mathfrak{A} \vDash \psi_g(g\overline{b}) &\Leftrightarrow 
+	\mathfrak{B} \vDash \psi_g(\overline{b})
 \end{align*}
 for all $\overline{a}$ and $\overline{b}$, which contradicts $(*)$.
 Thus, $\mathfrak{B} \nvDash Q_A(\overline{x}_h \psi_h)_{h \in \mathcal{F}_A}$ or
@@ -1679,9 +1729,10 @@ which completes the induction step.
 \end{proof}
 
 \begin{corollary}
-	Let $\tau$ be vocabulary and $\mathfrak{A}$, $\mathfrak{B}$ $\tau$-structures.
-	Then we have $
-	\mathfrak{A} \simeq_{\emb} \mathfrak{B} \text{ if and only if } \mathfrak{A} \equiv_{\emb} \mathfrak{B}$.
+Let $\tau$ be vocabulary and $\mathfrak{A}$, $\mathfrak{B}$ $\tau$-structures.
+Then we have 
+$\mathfrak{A} \simeq_{\emb} \mathfrak{B} \text{ if and only if } 
+\mathfrak{A} \equiv_{\emb} \mathfrak{B}$.
 \end{corollary}
 
 \begin{example}\label{hier}
@@ -1707,21 +1758,21 @@ We are going to use the embedding game in order to prove the following theorem:
 For each $n<\omega$, there is a first-order sentence $\varphi_n$ of quantifier
 rank $n$ satisfying the following:
 \begin{enumerate}
-	\item The sentence $\varphi_n$ is not expressible by any
-	$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-sentence of quantifier rank
-	less than $n$.
-	\item The sentence $\varphi_n$ is of the form
-	\[
-	\varphi_n = Q_n x_n \cdots Q_1 x_1 \vartheta(x_1,\dots,x_n)
-	\]
-	where
-	\[
-	Q_n = \begin{cases}
-	\forall \text{ if } n \text{ is odd},\\
-	\exists \text{ if } n \text{ if even},
-	\end{cases}
-	\]
-	and $\vartheta$ is quantifier-free.
+\item The sentence $\varphi_n$ is not expressible by any
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-sentence of quantifier rank
+less than $n$.
+\item The sentence $\varphi_n$ is of the form
+\[
+\varphi_n = Q_n x_n \cdots Q_1 x_1 \vartheta(x_1,\dots,x_n)
+\]
+where
+\[
+Q_n = \begin{cases}
+\forall \text{ if } n \text{ is odd},\\
+\exists \text{ if } n \text{ if even},
+\end{cases}
+\]
+and $\vartheta$ is quantifier-free.
 \end{enumerate}
 \end{theorem}
 
@@ -1742,9 +1793,12 @@ $\mathfrak{B} = \mathfrak{A}_0 \cup \mathfrak{A}_1$ if and only if
 $\mathfrak{B}$ is a $\tau_0 \cup \tau_1$-structure such that
 \begin{align*}
 	B &= A_0 \cup A_1, \\
-	R^{\mathfrak{B}} &= R^{\mathfrak{A}_0} \cup R^{\mathfrak{A}_1} \text{ for all } R \in \tau_0 \cap \tau_1, \\
-	R^{\mathfrak{B}} &= R^{\mathfrak{A}_0} \text{ for all } R \in \tau_0 \setminus \tau_1,\\
-	R^{\mathfrak{B}} &= R^{\mathfrak{A}_1} \text{ for all } R \in \tau_1 \setminus \tau_0.
+	R^{\mathfrak{B}} &= R^{\mathfrak{A}_0} \cup R^{\mathfrak{A}_1} 
+	\text{ for all } R \in \tau_0 \cap \tau_1, \\
+	R^{\mathfrak{B}} &= R^{\mathfrak{A}_0} 
+	\text{ for all } R \in \tau_0 \setminus \tau_1,\\
+	R^{\mathfrak{B}} &= R^{\mathfrak{A}_1} 
+	\text{ for all } R \in \tau_1 \setminus \tau_0.
 \end{align*}
 \end{definition}
 
@@ -1773,11 +1827,17 @@ Note that
 $\eta_i^{\mathfrak{A}} = (\mathfrak{A} \upharpoonright \{\leq\}) | P_i^{\mathfrak{A}}$.
 Finally we set
 \[
-S_1 = \{\mathfrak{A}\in R_1 \colon E_1^{\mathfrak{A}} \text{ is an isomorphism between } \eta^{\mathfrak{A}}_1 \text{ and } \eta^{\mathfrak{A}}_0 \}
+	S_1 = \{\mathfrak{A}\in R_1 \colon 
+	E_1^{\mathfrak{A}} \text{ is an isomorphism between } 
+	\eta^{\mathfrak{A}}_1 \text{ and } \eta^{\mathfrak{A}}_0 \}
 \]
 and
 \begin{align*}
-T_1 = \{\mathfrak{B}\in R_1 \colon &\ \text{There is } a \in P^{\mathfrak{B}}_1 \text{ and an isomorphism } h \text{ between }\\ &\ \eta^{\mathfrak{B}}_1 \text{ and }\eta^{\mathfrak{B}}_0 \text{ such that } E_1^{\mathfrak{B}} = h \setminus \{(a,h(a))\}.
+	T_1 = \{\mathfrak{B}\in R_1 \colon 
+	&\ \text{There is } a \in P^{\mathfrak{B}}_1 
+	\text{ and an isomorphism } h \text{ between }\\ &\ 
+	\eta^{\mathfrak{B}}_1 \text{ and }\eta^{\mathfrak{B}}_0 
+	\text{ such that } E_1^{\mathfrak{B}} = h \setminus \{(a,h(a))\}.
 \end{align*}
 
 \begin{figure}
@@ -1847,18 +1907,18 @@ There is an embedding $f$ of $\mathfrak{A}$ into $\mathfrak{B}$ such that for
 any $\overline{a} \in A^{<\omega}$ there are partitions $(A_1, A_2)$ of $A$ and
 $(B_1, B_2)$ of $B$ such that
 \begin{enumerate}
-	\item $\overline{a} \in A_1^{<\omega}$,
-	\item $f | A_1$ is an isomorphism between $\mathfrak{A} | A_1$ and $\mathfrak{B} | B_1$,
-	\item $\mathfrak{A} | A_2 \cong \mathfrak{A}$ and $\mathfrak{B}|B_2 \cong \mathfrak{B}$,
-	\item for every embedding
-	$g \colon \mathfrak{A}|A_2\rightarrow \mathfrak{B}|B_2$ and
-	$h \colon \mathfrak{B} |B_2 \rightarrow \mathfrak{A}|A_2$ it is the case that
-	$(f|A_1) \cup g$ and $(f^{-1}|B_1) \cup h$ are embeddings
-	$\mathfrak{A} \rightarrow \mathfrak{B}$ and
-	$\mathfrak{B} \rightarrow \mathfrak{A}$, respectively,
-	\item for any $m < \omega$, we have
-	$(\mathfrak{A}, \overline{a}) \equiv^m_{\emb} (\mathfrak{B}, f\overline{a})$
-	if and only if $\mathfrak{A} \equiv^m_{\emb} \mathfrak{B}$.
+\item $\overline{a} \in A_1^{<\omega}$,
+\item $f | A_1$ is an isomorphism between $\mathfrak{A} | A_1$ and $\mathfrak{B} | B_1$,
+\item $\mathfrak{A} | A_2 \cong \mathfrak{A}$ and $\mathfrak{B}|B_2 \cong \mathfrak{B}$,
+\item for every embedding
+$g \colon \mathfrak{A}|A_2\rightarrow \mathfrak{B}|B_2$ and
+$h \colon \mathfrak{B} |B_2 \rightarrow \mathfrak{A}|A_2$ it is the case that
+$(f|A_1) \cup g$ and $(f^{-1}|B_1) \cup h$ are embeddings
+$\mathfrak{A} \rightarrow \mathfrak{B}$ and
+$\mathfrak{B} \rightarrow \mathfrak{A}$, respectively,
+\item for any $m < \omega$, we have
+$(\mathfrak{A}, \overline{a}) \equiv^m_{\emb} (\mathfrak{B}, f\overline{a})$
+if and only if $\mathfrak{A} \equiv^m_{\emb} \mathfrak{B}$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1880,7 +1940,8 @@ Let $a_0,\dots,a_k \in A$. We must find partitions satisfying conditions 1-5.
 For this, let $b, c \in A$ be such that
 \begin{align*}
 	\mathfrak{A} \vDash &P_1(b) \wedge P_0(c) \wedge E_1(b,c) \wedge \\
-	&\bigwedge_{i\leq k}\big(\big(P_1(a_i) \rightarrow a_i<b\big) \wedge \big(P_0(a_i)\rightarrow a_i < c\big)\big).
+	&\bigwedge_{i\leq k}\big(\big(P_1(a_i) \rightarrow 
+	a_i<b\big) \wedge \big(P_0(a_i)\rightarrow a_i < c\big)\big).
 \end{align*}
 Now set $A_1 = \{x \in A \colon x \leq b \text{ or } x \leq c \}$, $B_1 = f[A_1]$,
 and denote by $A_2$, $B_2$ the complements of $A_1$, $B_1$, respectively.
@@ -1911,18 +1972,18 @@ There is an embedding $f$ of $\mathfrak{B}$ into $\mathfrak{A}$ such that for an
 $\overline{a} \in B^{<\omega}$ there are partitions $(A_1,A_2)$ of $A$ and
 $(B_1,B_2)$ of $B$ such that
 \begin{enumerate}
-	\item $\overline{a} \in B_1^{<\omega}$,
-	\item $f | B_1$ is an isomorphism between $\mathfrak{B} | B_1$ and $\mathfrak{A} | A_1$,
-	\item $\mathfrak{A}|A_2 \in T_{n-1}$ and $\mathfrak{B}|B_2 \in S_{n-1}$,
-	\item for every embedding $g \colon \mathfrak{A}|A_2\rightarrow \mathfrak{B}|B_2$
-	and $h \colon \mathfrak{B}' |B_2\rightarrow \mathfrak{A}'|A_2$ it is the case
-	that $(f^{-1}|A_1) \cup g$ and $(f|B_1) \cup h$ are embeddings
-	$\mathfrak{A} \rightarrow \mathfrak{B}$ and
-	$\mathfrak{B} \rightarrow \mathfrak{A}$, respectively,
-	\item we have
-	$(\mathfrak{A}, f\overline{a}) \equiv^{n-1}_{\emb} (\mathfrak{B}, \overline{a})$
-	if and only if $\mathfrak{M} \equiv^{n-1}_{\emb} \mathfrak{N}$ for all
-	$\mathfrak{M} \in T_{n-1}$ and $\mathfrak{N} \in S_{n-1}$.
+\item $\overline{a} \in B_1^{<\omega}$,
+\item $f | B_1$ is an isomorphism between $\mathfrak{B} | B_1$ and $\mathfrak{A} | A_1$,
+\item $\mathfrak{A}|A_2 \in T_{n-1}$ and $\mathfrak{B}|B_2 \in S_{n-1}$,
+\item for every embedding $g \colon \mathfrak{A}|A_2\rightarrow \mathfrak{B}|B_2$
+and $h \colon \mathfrak{B}' |B_2\rightarrow \mathfrak{A}'|A_2$ it is the case
+that $(f^{-1}|A_1) \cup g$ and $(f|B_1) \cup h$ are embeddings
+$\mathfrak{A} \rightarrow \mathfrak{B}$ and
+$\mathfrak{B} \rightarrow \mathfrak{A}$, respectively,
+\item we have
+$(\mathfrak{A}, f\overline{a}) \equiv^{n-1}_{\emb} (\mathfrak{B}, \overline{a})$
+if and only if $\mathfrak{M} \equiv^{n-1}_{\emb} \mathfrak{N}$ for all
+$\mathfrak{M} \in T_{n-1}$ and $\mathfrak{N} \in S_{n-1}$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1953,17 +2014,17 @@ $\mathfrak{M}_x^{\mathfrak{A}}$ or $\mathfrak{M}_x^{\mathfrak{B}}$.
 By Lemma \ref{right_emb}, there are partitions $(M_1,M_2)$ of $M_a$ and
 $(N_1,N_2)$ of $M_{h(a)}$ such that
 \begin{enumerate}
-	\item $a_{m+1},\dots,a_k \in M_1$,
-	\item $h_a|M_1$ is an isomorphism between $\mathfrak{M}_a | M_1$ and
-	$\mathfrak{M}_{h(a)} | N_1$,
-	\item $\mathfrak{M}_a | M_2 \in S_{n-1}$ and
-	$\mathfrak{M}_{h(a)} | N_2 \in T_{n-1}$,
-	\item for every embedding
-	$g \colon \mathfrak{M}_a|M_2 \rightarrow \mathfrak{M}_{h(a)}|N_2$ and
-	$g' \colon \mathfrak{M}_{h(a)}|N_2 \rightarrow \mathfrak{M}_a | M_2$ we have that
-	$(h_a | M_1) \cup g$ and $(h_a^{-1} | N_1)\cup g'$ are also embeddings
-	$\mathfrak{M}_a \rightarrow \mathfrak{M}_{h(a)}$ and
-	$\mathfrak{M}_{h(a)} \rightarrow \mathfrak{M}_a$, respectively.
+\item $a_{m+1},\dots,a_k \in M_1$,
+\item $h_a|M_1$ is an isomorphism between $\mathfrak{M}_a | M_1$ and
+$\mathfrak{M}_{h(a)} | N_1$,
+\item $\mathfrak{M}_a | M_2 \in S_{n-1}$ and
+$\mathfrak{M}_{h(a)} | N_2 \in T_{n-1}$,
+\item for every embedding
+$g \colon \mathfrak{M}_a|M_2 \rightarrow \mathfrak{M}_{h(a)}|N_2$ and
+$g' \colon \mathfrak{M}_{h(a)}|N_2 \rightarrow \mathfrak{M}_a | M_2$ we have that
+$(h_a | M_1) \cup g$ and $(h_a^{-1} | N_1)\cup g'$ are also embeddings
+$\mathfrak{M}_a \rightarrow \mathfrak{M}_{h(a)}$ and
+$\mathfrak{M}_{h(a)} \rightarrow \mathfrak{M}_a$, respectively.
 \end{enumerate}
 Now let $A_1 = A \setminus N_2$, $A_2 = N_2$, $B_1 = B \setminus M_2$ and $B_2 = M_2$.
 Then $(A_1,A_2)$ and $(B_1,B_2)$ are partitions of $A$ and $B$, respectively,
