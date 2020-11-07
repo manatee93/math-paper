@@ -333,7 +333,8 @@ and $\Psi$ is a function $\Str[\tau] \rightarrow \Str[\sigma]$ such that
 for each $\mathfrak{A}\in\Str[\tau]$, the universe of $\Psi(\mathfrak{A})$ is
 $A$ and
 \begin{equation*}
-	R^{\Psi(\mathfrak{A})} = \{\overline{a} \in A^{\ar(R)} \colon \mathfrak{A}\vDash\psi_R(\overline{a}) \}
+	R^{\Psi(\mathfrak{A})} = \{\overline{a} \in A^{\ar(R)} \colon
+	\mathfrak{A}\vDash\psi_R(\overline{a}) \}
 \end{equation*}
 for all $R\in\sigma$.
 
@@ -918,7 +919,8 @@ In this subsection, we will consider logics $\mathcal{L}_{\infty\omega}^m$
 (the restriction of $\mathcal{L}_{\infty\omega}$ to formulas that use at most
 $m$ variables) extended with finite number of em\-bed\-ding-closed quantifiers
 of finite width.
-We will show that in a countably infinite chain of quasi-homogeneous structures
+We will show that in a countably infinite chain of interpretations of 
+quasi-homogeneous structures
 of finite relational vocabulary, a formula of such a logic is eventually
 equivalent to a quantifier-free formula.
 This will allow us to demonstrate, among other things, that certain properties
@@ -1230,6 +1232,38 @@ Then all antichains of structures in $\mathcal{H}$ are finite.
 In other words, if $C \subseteq \mathcal{H}$ is infinite, then there are
 $\mathfrak{A}$, $\mathfrak{B} \in C$ such that $\mathfrak{A} < \mathfrak{B}$.
 \end{lemma}
+
+\begin{corollary}\label{shrinking_interpr}
+Let $\tau$ and $\sigma$ be finite relational vocabularies and
+$(\Psi, (\psi_R)_{R \in \sigma})$ an 
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of $\sigma$ in
+$\tau$.
+Let $\mathcal{H}$ be the class of all finite homogeneous $\tau$-structures and
+\[
+	\Psi(\mathcal{H}) = \{\Psi(\mathfrak{A}) \colon \mathfrak{A} \in \mathcal{H}\}.
+\]
+Then all antichains of structures of $\Psi(\mathcal{H})$ are finite.
+\end{corollary}
+\begin{proof}
+Assume to the contrary that there is a countably infinite antichain
+\[
+	\Psi(\mathfrak{A}_0),\ \Psi(\mathfrak{A}_1),\ \dots
+\]
+with all $\mathfrak{A}_i \in \mathcal{H}$.
+There are natural numbers $i_0$, $i_1$, $\dots$ such that 
+$\mathfrak{A}_{i_j} \leq \mathfrak{A}_{i_{j + 1}}$ for all $j < \omega$
+because otherwise we would be able to construct an infinite antichain of 
+homogeneous structures which contradicts Lemma \ref{shrinking}.
+By Corollary \ref{finite2}, since $\sigma$ is finite, there is $k < \omega$
+such that 
+\[
+	\mathfrak{A}_k, \overline{a} \vDash \psi_R \Leftrightarrow
+	\mathfrak{A}_{k + 1}, \overline{a} \vDash \psi_R
+\]
+for all $R \in \sigma$ and $\overline{a} \in A_k^{\ar(R)}$.
+Thus, since $\mathfrak{A}_k \leq \mathfrak{A}_{k + 1}$, we have
+$\Psi(\mathfrak{A}_k) \leq \Psi(\mathfrak{A}_{k + 1})$, contradiction.
+\end{proof}
 
 We will also use the following lemma whose correctness is easily verified.
 
