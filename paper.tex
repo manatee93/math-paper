@@ -1290,22 +1290,30 @@ $\mathfrak{A} \vDash \varphi \Leftrightarrow \mathfrak{B} \vDash \varphi$.
 \end{definition}
 
 \begin{lemma}\label{stabil}
-Let $\tau$ be a finite relational vocabulary,
-$\mathcal{Q}$ a finite set of embedding-closed quantifiers of finite width,
-and $\varphi \in \mathcal{L}_{\infty\omega}^{\omega}(\mathcal{Q})[\tau]$ a sentence.
-If $\mathcal{K}$ is a set of quasi-homogeneous $\tau$-structures, then there is
-a structure $\mathfrak{A} \in \mathcal{K}$ that stabilizes $\varphi$ in $\mathcal{K}$.
+Let $\tau$ and $\sigma$ be finite relational vocabularies and
+$(\Psi, (\psi_R)_{R \in \sigma})$ an 
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of $\sigma$ in
+$\tau$.
+Suppose $\mathcal{Q}$ is a finite set of embedding-closed quantifiers of finite width
+and $\varphi \in \mathcal{L}_{\infty\omega}^{\omega}(\mathcal{Q})[\sigma]$ a sentence.
+Let $\mathcal{K}$ be a set of quasi-homogeneous $\tau$-structures and write
+\[
+	\Psi(\mathcal{K}) = \{\Psi(\mathfrak{A}) \colon \mathfrak{A} \in \mathcal{K}\}.
+\]
+There is a structure $\mathfrak{A} \in \mathcal{K}$ such that $\Psi(\mathfrak{A})$
+stabilizes $\varphi$ in $\Psi(\mathcal{K})$.
 \end{lemma}
 \begin{proof}
 Assume to the contrary that there is no such structure.
-Then there is a function $F : \mathcal{K}\rightarrow\mathcal{K}$ such that
-$\mathfrak{A} \leq F(\mathfrak{A})$ and
-$\mathfrak{A} \vDash\varphi \nLeftrightarrow F(\mathfrak{A}) \vDash \varphi$ for
-all $\mathfrak{A} \in \mathcal{K}$.
+Then there is a function $F : \mathcal{K} \rightarrow \mathcal{K}$ such that
+$\Psi(\mathfrak{A}) \leq \Psi(F(\mathfrak{A}))$ and
+$\Psi(\mathfrak{A}) \vDash\varphi \nLeftrightarrow \Psi(F(\mathfrak{A})) \vDash \varphi$ 
+for all $\mathfrak{A} \in \mathcal{K}$.
 Now let $\mathfrak{A}_0 \in \mathcal{K}$ and define
 $\mathfrak{A}_{k+1} = F(\mathfrak{A}_k)$.
-Then $(\mathfrak{A}_i)_{i<\omega}$ is a chain of quasi-homogeneous structures in
-which $\varphi$ does not stabilize which contradicts Theorem \ref{finite}.
+Then $(\Psi(\mathfrak{A}_i))_{i<\omega}$ is a chain, with all $\mathfrak{A}_i$
+being quasi-homogeneous, that does not stabilize $\varphi$ which contradicts 
+Theorem \ref{finite}.
 \end{proof}
 
 \begin{definition}
