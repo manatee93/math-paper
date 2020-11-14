@@ -1324,12 +1324,21 @@ $\mathcal{K}$ if $\varphi$ defines $\mathcal{K} \setminus S$ for some finite
 \end{definition}
 
 \begin{theorem}\label{log_eq}
-Let $\tau$ be a finite relational vocabulary and $\mathcal{H}$ the class of all
-finite homogeneous $\tau$-structures. Suppose that $\mathcal{Q}$ is a finite set
-of embedding-closed quantifiers of finite width, and $S \subseteq \mathcal{H}$
+Let $\tau$ and $\sigma$ be finite relational vocabularies,
+$(\Psi, (\psi_R)_{R \in \sigma})$ an 
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of $\sigma$ in
+$\tau$ and
+\[
+\mathcal{H} = \{\Psi(\mathfrak{A}) 
+\colon \mathfrak{A} \text{ is a finite homogeneous } \tau \text{-structure}\}.
+\]
+Suppose that $\mathcal{Q}$ is a finite set
+of embedding-closed quantifiers of finite width, 
+and $\mathcal{K} \subseteq \mathcal{H}$
 is a class that is definable over $\mathcal{H}$ by an
 $\mathcal{L}^{\omega}_{\infty\omega}(\mathcal{Q})$-sentence $\varphi$.
-Then $S$ is nearly definable by an existential $\mathcal{L}_{\omega\omega}$-sentence.
+Then $\mathcal{K}$ is nearly definable by an existential 
+$\mathcal{L}_{\omega\omega}$-sentence.
 \end{theorem}
 \begin{proof}
 Let $\mathcal{H}' = \mathcal{H} \cap V_{\omega}$ where $V_{\omega}$ is the
@@ -1339,7 +1348,7 @@ $\mathcal{H}'$ is a set such that for every $\mathfrak{A} \in \mathcal{H}$ there
 is $\mathfrak{A}' \in \mathcal{H}'$ isomorphic to $\mathfrak{A}$ so by Lemma
 \ref{stabil} there is a choice function
 $F\colon \mathcal{P}(\mathcal{H}') \rightarrow \mathcal{H}'$ such that
-for all $T \subseteq \mathcal{H}'$, $S \ne \emptyset$, $F(T)$ stabilizes
+for all $S \subseteq \mathcal{H}'$, $S \ne \emptyset$, $F(S)$ stabilizes
 $\varphi$ in $T$ and $F(\emptyset) = \emptyset$.
 Now for all $i < \omega$ we define sets $\mathcal{H}_i \subseteq \mathcal{H}$
 and $\tau$-structures $\mathfrak{A}_i$ by setting $\mathcal{H}_0 = \mathcal{H}'$,
@@ -1381,25 +1390,34 @@ and all $\vartheta_i$ are existential $\mathcal{L}_{\omega \omega}$-sentences
 for which $\mathfrak{A}_i \vDash \vartheta_i$ if and only if
 $\mathfrak{A}_i \leq \mathfrak{A}$.
 
-We claim that $\psi$ defines $S \setminus \mathcal{G}_0$ over $\mathcal{H}$.
+We claim that $\psi$ defines $\mathcal{K} \setminus \mathcal{G}_0$ over 
+$\mathcal{H}$.
 To show this, let $\mathfrak{A} \in \mathcal{H}$ be such that
 $\mathfrak{A} \vDash \psi$.
 Then for some $\mathfrak{A}_i$ we have $\mathfrak{A}_i \leq \mathfrak{A}$ and
 $\mathfrak{A}_i \vDash \varphi$.
 Furthermore, since $\mathfrak{A}_i$ stabilizes $\varphi$ in $\mathcal{H}$, we
-have $\mathfrak{A} \vDash \varphi$, and therefore $\mathfrak{A} \in S$.
+have $\mathfrak{A} \vDash \varphi$, and therefore 
+$\mathfrak{A} \in \mathcal{K}$.
 In addition, it is easy to see that $\mathfrak{A} \notin \mathcal{G}_0$ so
-$\mathfrak{A} \in S \setminus \mathcal{G}_0$.
-For the other direction, if $\mathfrak{A} \in S \setminus \mathcal{G}_0$,
+$\mathfrak{A} \in \mathcal{K} \setminus \mathcal{G}_0$.
+For the other direction, if 
+$\mathfrak{A} \in \mathcal{K} \setminus \mathcal{G}_0$,
 then $\mathfrak{A} \vDash \varphi$ and, by our earlier observation, we have
 $\mathfrak{A} \vDash \psi$.
-Thus, since $\mathcal{G}_0$ is finite up to isomorphism, the class $S$ is nearly
+Thus, since $\mathcal{G}_0$ is finite up to isomorphism, the class $\mathcal{K}$ is nearly
 definable by an existential $\mathcal{L}_{\omega\omega}$-sentence.
 \end{proof}
 
 \begin{corollary}
-Let $\tau$ be a finite relational vocabulary and $\mathcal{H}$ the class of all
-finite homogeneous $\tau$-structures.
+Let $\tau$ and $\sigma$ be finite relational vocabularies,
+$(\Psi, (\psi_R)_{R \in \sigma})$ an 
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of $\sigma$ in
+$\tau$ and
+\[
+\mathcal{H} = \{\Psi(\mathfrak{A}) 
+\colon \mathfrak{A} \text{ is a finite homogeneous } \tau \text{-structure}\}.
+\]
 Suppose that $\mathcal{Q}$ is a finite set of embedding-closed quantifiers of
 finite width.
 Then every $\mathcal{L}^{\omega}_{\infty\omega}(\mathcal{Q})$-sentence is
@@ -1407,7 +1425,7 @@ definable over $\mathcal{H}$ by a $\Sigma^0_2$ sentence of
 $\mathcal{L}_{\omega\omega}$.
 \end{corollary}
 \begin{proof}
-Let $\varphi \in \mathcal{L}^{\omega}_{\infty\omega}(\mathcal{Q})[\tau]$.
+Let $\varphi \in \mathcal{L}^{\omega}_{\infty\omega}(\mathcal{Q})[\sigma]$.
 By Theorem \ref{log_eq}, there is an existential
 $\mathcal{L}_{\omega\omega}$-sentence $\psi$ and a class
 $S \subseteq \mathcal{H}$ such that $S$ is finite up to isomorphism and for all
