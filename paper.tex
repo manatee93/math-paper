@@ -962,7 +962,7 @@ We claim that for all $i \geq k$ and $\overline{a} \in A_i^m$, we have
 \Leftrightarrow
 \Psi(\mathfrak{A}_i), \overline{a} \vDash \varphi.
 \end{equation}
-The statement on the right side implies the left side statement by the
+The right hand side implies the left hand side by the
 definition of $T$.
 For the other direction, suppose that
 $\mathfrak{A}_i, \overline{a} \vDash \bigvee T$
@@ -975,7 +975,8 @@ Since $\Psi(\mathfrak{A}_j) \leq \Psi(\mathfrak{A}_i)$, $Q$ is embedding-closed
 and all $\chi_i$ are quantifier-free, we have
 $\Psi(\mathfrak{A}_i), \overline{b} \vDash \varphi$.
 However, since $\mathfrak{A}_i$ is quasi-homogeneous,
-there is, by Lemma 2.2 and Theorem 5.3, a quantifier-free $\tau$-formula
+there is, by Lemma \ref{interpr} and Theorem \ref{homog}, 
+a quantifier-free $\tau$-formula
 $\varphi^*$ such that
 $\mathfrak{A}_i, \overline{a} \nvDash \varphi^*$
 and $\mathfrak{A}_i, \overline{b} \vDash \varphi^*$
@@ -989,10 +990,9 @@ for which there is a natural number $j$ with
 $k \leq j \leq i$ and $\overline{a} \in A^m_j$ such that
 $\Psi(\mathfrak{A}_j), \overline{a} \vDash t$ and
 $\mathfrak{A}_j, \overline{a} \vDash \bigvee T$.
-The chain $(T'_i)_{i < \omega}$ is clearly monotone and, since $\sigma$ is
-finite and relational, there is a natural
-number $k'$ at which the chain $(T'_i)_{i < \omega}$ reaches
-its maximum.
+The chain $(T'_i)_{k \leq i < \omega}$ is clearly monotone and, 
+since $\sigma$ is finite and relational, 
+there is a natural number $k'$ at which it reaches its maximum.
 Denote $T' = T'_{k'}$.
 We claim that
 \begin{equation}\label{eq_1}
@@ -1455,24 +1455,29 @@ It is possible to generalize Theorem \ref{finite} to vocabularies and sets of
 embedding-closed quantifiers of arbitrary cardinality.
 
 \begin{theorem}\label{infinite}
-Let $\tau$ be a vocabulary, $\kappa$ a cardinal, $\mathcal{Q}$ a set of
-embedding-closed quantifiers of width less than $\kappa$, and $\lambda$ a regular
-cardinal such that
+Let $\tau$ and $\sigma$ be relational vocabularies, $\kappa$ a cardinal, 
+$\mathcal{Q}$ a set of embedding-closed quantifiers of width less than $\kappa$, 
+and $\lambda$ a regular cardinal such that
 \[
-	2^{|\tau|\cdot\aleph_0} \cdot |\mathcal{Q}|^{\kappa} < \lambda.
+	2^{(|\tau| + |\sigma|) \cdot \aleph_0} \cdot |\mathcal{Q}|^{\kappa} < \lambda.
 \]
-Suppose $(\mathfrak{A}_{\alpha})_{\alpha<\lambda}$ is a chain of quasi-homogeneous
+Let $(\Psi, (\psi_R)_{R \in \sigma})$ be an
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of
+$\sigma$ in $\tau$, and $(\Psi(\mathfrak{A}_{\alpha}))_{\alpha < \lambda}$
+a chain in which all $\mathfrak{A}_{\alpha}$ are quasi-homogeneous 
 $\tau$-structures.
 There is a cardinal $\mu<\lambda$ such that for every formula
-$\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q})$ there is a quantifier-free
-$\tau$-formula $\vartheta_{\varphi}$ such that
+$\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q})[\sigma]$ 
+there is a quantifier-free
+$\sigma$-formula $\vartheta_{\varphi}$ such that
 \[
 	\mathfrak{A}_{\alpha} \vDash \forall \overline{x}(\varphi 
 	\leftrightarrow \vartheta_{\varphi})
 \]
 for all $\alpha \geq \mu$.
 In particular,
-$\mathfrak{A}_{\alpha} \preceq_{\mathcal{L}_{\infty\omega}(\mathcal{Q})} \mathfrak{A}_{\beta}$
+$\mathfrak{A}_{\alpha} \preceq_{\mathcal{L}_{\infty\omega}(\mathcal{Q})} 
+\mathfrak{A}_{\beta}$
 for all $\alpha$, $\beta$ with $\mu \leq \alpha \leq \beta < \lambda$.
 \end{theorem}
 \begin{proof}
@@ -1481,34 +1486,75 @@ where all $\vartheta_i$ are quantifier-free $\tau$-formulas.
 In the first part of this proof, we will generalize the proof of Lemma
 \ref{quant_elim_finite_lemma} so it works for chains of quasi-homogeneous
 structures of arbitrary length.
-First we observe that for all $\alpha< \lambda$ there is the smallest set
-$T_{\alpha}$ of atomic types of $\tau$ such that
-$\mathfrak{A}_{\alpha} \vDash \forall\overline{x}(\varphi \leftrightarrow \bigvee T_{\alpha})$
-because of quasi-homogeneity of $\mathfrak{A}_{\alpha}$.
-In addition, if $\alpha < \beta < \lambda$, then
-$T_{\alpha} \subseteq T_{\beta}$.
-Thus, since there are at most $2^{|\tau|+\aleph_0}$ atomic types of $\tau$,
-if $\lambda$ is a regular cardinal greater than $2^{|\tau|+\aleph_0}$
-and $(\mathfrak{A}_{\alpha})_{\alpha<\lambda}$ is a chain of quasi-homogeneous
-$\tau$-structures, then there is a cardinal $\kappa_{\varphi}<\lambda$ and a
-quantifier-free $\tau$-formula $\vartheta_{\varphi}$ that is equivalent to
-$\varphi$ in structures $\mathfrak{A}_{\alpha}$ with $\alpha\geq\kappa_{\varphi}$.
 
-Let $\Phi$ be the set of all formulas of the form
+For each $\alpha < \lambda$, let $T_{\alpha}$ be the set of all atomic 
+types of $\tau$ such that $\mathfrak{A}_{\alpha}, \overline{a} \vDash t$
+and $\Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \varphi$ 
+for some $\overline{a}$.
+Since there are at most $2^{|\tau|+\aleph_0}$ atomic types of $\tau$,
+and $\lambda$ is a regular cardinal greater than $2^{|\tau|+\aleph_0}$,
+there is a cardinal $\kappa_{\varphi} < \lambda$ at which the chain 
+$(T_{\alpha})_{\alpha < \lambda}$ reaches its maximum.
+We can show in the same way as in the proof of 
+Lemma \ref{quant_elim_finite_lemma} that for all 
+$\alpha \geq \kappa_{\varphi}$ and 
+$\overline{a} \in A^{\frvar(\varphi)}$ we then have
+\[
+	\mathfrak{A}_{\alpha}, \overline{a} \vDash \bigvee T_{\kappa_{\varphi}}
+	\Leftrightarrow
+	\Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \varphi.
+\]
+
+For each $\alpha \geq \kappa_{\varphi}$, $\alpha < \lambda$, let $T_{\alpha}'$
+be the set of all atomic types $t$ of $\sigma$ such that there is a cardinal 
+$\beta$, $\kappa_{\varphi} \leq \beta \leq \alpha$, and
+$\overline{a} \in A^{\frvar(\varphi)}_{\beta}$
+for which
+$\Psi(\mathfrak{A}_{\beta}), \overline{a} \vDash t$ and
+$\mathfrak{A}_{\beta}, \overline{a} \vDash \bigvee T_{\kappa_{\varphi}}$.
+The chain $(T'_{\alpha})_{\kappa_{\varphi} \leq \alpha < \lambda}$ achieves
+its maximum at some cardinal $\mu_{\varphi} < \lambda$ that exists since
+there are at most $2^{|\sigma| + \aleph_0}$ atomic types of $\sigma$
+and $\lambda$ is a regular cardinal greater than this number.
+Again, as in Lemma \ref{quant_elim_finite_lemma}, we can show that for all
+$\alpha \geq \mu_{\varphi}$ and 
+$\overline{a} \in A^{\frvar(\varphi)}_{\alpha}$ we have
+\[
+	\Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \bigvee T_{\mu_{\varphi}}'
+	\Leftrightarrow \mathfrak{A}_{\alpha}, \overline{a} \vDash \bigvee T_{\kappa_{\varphi}}
+\]
+and further
+\[
+	\Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \bigvee T_{\mu_{\varphi}}'
+	\Leftrightarrow \Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \varphi.
+\]
+Thus, for every formula $\varphi$ of the form 
+$Q(\overline{x}_i \vartheta_i)_{i < \delta}$ with all $\vartheta_i$
+quantifier-free there is a cardinal $\mu_{\varphi} < \lambda$ and a 
+quantifier-free formula $\vartheta_{\varphi}$ such that
+\[
+	\Psi(\mathfrak{A}_{\alpha}) \vDash 
+	\forall \overline{x}(\varphi \leftrightarrow \vartheta_{\varphi})
+\]
+for all $\alpha \geq \mu_{\varphi}$, $\alpha < \lambda$.
+
+Let $\Phi$ be the set of all $\sigma$-formulas of the form
 $Q(\overline{x}_i\vartheta_i)_{i<\delta}$,
 with $Q\in\mathcal{Q}$ and all $\vartheta_i$ quantifier-free.
-Then $|\Phi| \leq 2^{|\tau|\cdot\aleph_0}\cdot |\mathcal{Q}|^{\kappa}$.
+Then 
+$|\Phi| \leq 2^{(|\sigma| + |\tau|) \cdot \aleph_0} \cdot |\mathcal{Q}|^{\kappa}$.
 We claim that we can set
-$\mu := \sup\{\kappa_{\varphi} \colon \varphi \in \Phi \}$.
-Note that $\mu<\lambda$.
+$\mu := \sup\{\mu_{\varphi} \colon \varphi \in \Phi \}$.
+Note that $\mu < \lambda$.
 We use induction on the structure of the formula to prove this claim.
 If $\varphi$ is atomic there is nothing to prove.
-If $\varphi = \bigwedge_{i\in I} \varphi_i$ and the claim holds for all
-$\varphi_i$, then $\vartheta_{\varphi} = \bigwedge_{i\in I}\vartheta_{\varphi_i}$.
+If $\varphi = \bigwedge_{i \in I} \varphi_i$ and the claim holds for all
+$\varphi_i$, then 
+$\vartheta_{\varphi} = \bigwedge_{i\in I}\vartheta_{\varphi_i}$.
 If $\varphi = \neg \varphi'$ and the claim is true for $\varphi'$,
 then $\vartheta_{\varphi} = \neg \vartheta_{\varphi'}$.
-Finally, suppose that $\varphi = Q(\overline{x}_i\varphi_i)_{i<\delta}$ and the
-claim holds for all $\varphi_i$.
+Finally, suppose that $\varphi = Q(\overline{x}_i \varphi_i)_{i < \delta}$ 
+and the claim holds for all $\varphi_i$.
 Then each $\varphi_i$ is equivalent to a quantifier-free formula $\vartheta_i$
 on structures $\mathfrak{A}_{\alpha}$ with $\alpha \geq \mu$ so by the first part
 of the proof, $\varphi$ is also equivalent to some quantifier-free formula
