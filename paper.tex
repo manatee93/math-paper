@@ -551,67 +551,18 @@ These include among others equicardinality of sets (Example \ref{Hartig}), and
 completeness and cofinality of an ordering (Examples \ref{completeness} and
 \ref{cofinality}).
 
-
-\subsection{Homomorphism-closed quantifiers}
-
-In addition to being closed under embeddings, we can think of various other
-interesting closure conditions for quantifiers, like being closed under
-homomorphisms for instance.
-The purpose of this subsection is to show that any embedding-closed property can
-be defined in a logic with homomorphism-closed quantifiers only.
+\begin{remark}
+In addition to being closed under embeddings, we can imagine vari\-ous other
+interesting closure conditions for quantifiers, for example, being closed under
+homomorphisms. 
+The rest of this article will be restricted to the study of 
+embedding-closed quantifiers only.
+However, we would like to mention here that it can be shown 
+that any embedding-closed property can
+be defined in a logic with only homomorphism-closed quantifiers.
 Thus, requiring quantifiers to be closed under homomorphisms is not essentially
 more restrictive than the requirement that they are closed under embeddings.
-We denote by $\mathcal{Q}_{\hom}$ the class of all homomorphism-closed quantifiers.
-
-\begin{theorem}
-Let $\mathcal{L} = \mathcal{L}_{\kappa\omega}$ for some infinite cardinal
-$\kappa$ or $\mathcal{L} = \mathcal{L}_{\infty\omega}^{\omega}$.
-Then $\mathcal{L}(\mathcal{Q}_{\emb}) \equiv \mathcal{L}(\mathcal{Q}_{\hom})$.
-\end{theorem}
-\begin{proof}
-Let $\tau$ be a relational vocabulary and $K$ an embedding-closed class of
-$\tau$-structures.
-Let $\tau' = \tau \cup \{R_* \colon R \in \tau \} \cup \{N\}$ with
-$\ar(R_*)= \ar(R)$ for all $R \in\tau$ and $\ar(N) = 2$.
-Let $F \colon \Str[\tau] \rightarrow \Str[\tau']$ be the function such that for
-each $\mathfrak{A} \in \Str[\tau]$ the universe of
-$F(\mathfrak{A})$ is $A$, $R^{F(\mathfrak{A})} = R^{\mathfrak{A}}$ and
-$R_*^{F(\mathfrak{A})} = (\neg R)^{\mathfrak{A}}$ for all $R \in \tau$,
-and $N^{F(\mathfrak{A})} = (x\ne y)^{\mathfrak{A}}$.
-Now let
-\[
-	K' = \{\mathfrak{A}\in\tau' \colon \text{ there is } \mathfrak{B} \in K 
-	\text{ and a homomorphism }f \colon F(\mathfrak{B})\rightarrow \mathfrak{A} \}.
-\]
-Then $K'$ is homomorphism-closed since the composition of two homomorphisms is
-itself a homomorphism.
-Let $\psi$ be the following sentence of $\mathcal{L}(\mathcal{Q}_{\hom})$:
-\[
-	\psi := Q_{K'}((\overline{x}_RR)_{R\in\tau},
-	(\overline{y}_R\neg R)_{R\in\tau},uv(u\ne v)).
-\]
-We claim that $\psi$ defines the class $K$. To show this, suppose first that
-$\mathfrak{A} \in \Str[\tau]$ is such that $\mathfrak{A}\vDash \psi$.
-Then by the definition of $K'$ there is $\mathfrak{B} \in K$ and a homomorphism
-\[
-	f \colon F(\mathfrak{B}) \rightarrow 
-	(A,(R^{\mathfrak{A}})_{R\in\tau},(\neg R^{\mathfrak{A}})_{R\in\tau},
-	(x\ne y)^{\mathfrak{A}})
-\]
-which is in fact an embedding of $\mathfrak{B}$ into $\mathfrak{A}$ so,
-since $K$ is embedding-closed, we have $\mathfrak{A} \in K$.
-For the other direction, if $\mathfrak{A}\in K$ then $F(\mathfrak{A}) \in K'$ so
-\[
-	(A,(R^{\mathfrak{A}})_{R\in\tau},(\neg R^{\mathfrak{A}})_{R\in\tau},
-	(x\ne y)^{\mathfrak{A}}) \in K'
-\]
-from which it follows that $\mathfrak{A} \vDash \psi$.
-Thus, $K$ is definable in $\mathcal{L}(\mathcal{Q}_{\hom})$ so by Lemma
-\ref{prel_lemma} we have
-$\mathcal{L}(\mathcal{Q}_{\emb}) \leq \mathcal{L}(\mathcal{Q}_{\hom})$,
-and since every homomorphism-closed quantifier is also embedding-closed we have
-$\mathcal{L}(\mathcal{Q}_{\emb}) \equiv \mathcal{L}(\mathcal{Q}_{\hom})$.
-\end{proof}
+\end{remark}
 
 
 \section{$0$-$1$ Law}\label{law}
@@ -1001,19 +952,20 @@ We claim that
 \end{equation}
 for all $i \geq k'$ and $\overline{a} \in A_i^m$.
 
-"$\Rightarrow$" Suppose we have
+First, suppose we have
 $\Psi(\mathfrak{A}_i), \overline{a} \vDash \bigvee T'$ for some $i \geq k'$
 and $\overline{a} \in A_i^m$.
-Then for some $j$ with $k \leq j \leq k'$ there is $\overline{a} \in A_j^m$ such that
-$\mathfrak{A}_j, \overline{a} \vDash \bigvee T$.
-By (\ref{eq_0}) it follows that $\Psi(\mathfrak{A}_j), \overline{a} \vDash \varphi$
+Then for some $j$ with $k \leq j \leq k'$ there is $\overline{a} \in A_j^m$ 
+such that $\mathfrak{A}_j, \overline{a} \vDash \bigvee T$.
+By (\ref{eq_0}) it follows that 
+$\Psi(\mathfrak{A}_j), \overline{a} \vDash \varphi$
 and, since $\Psi(\mathfrak{A}_j) \leq \Psi(\mathfrak{A}_i)$, we have
 $\Psi(\mathfrak{A}_i), \overline{a} \vDash \varphi$ and thus
 $\mathfrak{A}_i, \overline{a} \vDash \bigvee T$.
 
-"$\Leftarrow$" Let $\mathfrak{A}_i, \overline{a} \vDash \bigvee T$
-for some $i \geq k'$ and $\overline{a} \in A_i^m$.
-Assume to the contrary that
+For the other direction, let $\mathfrak{A}_i, \overline{a} \vDash \bigvee T$
+for some $i \geq k'$ and $\overline{a} \in A_i^m$, and
+assume to the contrary that
 $\Psi(\mathfrak{A}_i), \overline{a} \nvDash \bigvee T'$.
 Then the atomic type $t$ of $\sigma$ for which
 $\Psi(\mathfrak{A}_i), \overline{a} \vDash t$ is in $T_i$ but not in $T_k'$
