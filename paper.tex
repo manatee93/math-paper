@@ -280,7 +280,7 @@ We denote the number of free variables of $\varphi$ by $\frvar(\varphi)$.
 If $\mathfrak{A}\in\Str[\tau]$ and $\varphi \in \mathcal{L}[\tau]$, then we
 write
 \[
-	\varphi^{\mathfrak{A}} = 
+	\varphi^{\mathfrak{A}} =
 	\{\overline{a} \in A^{\frvar(\varphi)} \colon 
 	\mathfrak{A},\overline{a} \vDash \varphi  \}.
 \]
@@ -295,7 +295,7 @@ An \emph{atomic $n$-type} of $\tau$ is a set $\Phi$ of literals of $\tau$ in
 variables $x_1,\dots,x_n$ such that there is a $\tau$-structure $\mathfrak{A}$
 and $n$-tuple $\overline{a}$ of elements in $A$ with
 \[
-	\Phi = \{\varphi \colon \mathfrak{A},\overline{a} \vDash \varphi 
+	\Phi = \{\varphi \colon \mathfrak{A},\overline{a} \vDash \varphi
 	\text{ and } \varphi \text{ is a literal of }\tau \}.
 \]
 If $\mathcal{L}$ is a logic, $\Phi$ an atomic type and there is an
@@ -307,7 +307,7 @@ then $t$ is also called an atomic type.
 Let $\vartheta$ be a quantifier-free $\tau$-formula in $n$ free variables.
 Then there exists a set $T$ of atomic $n$-types of $\tau$ such that
 \[
-	\vDash \vartheta \leftrightarrow 
+	\vDash \vartheta \leftrightarrow
 	\bigvee_{\Phi\in T} \bigwedge_{\varphi\in\Phi} \varphi.
 \]
 \end{lemma}
@@ -351,7 +351,7 @@ $\mathcal{L}_{\kappa\omega}(Q_C)[\tau]$-formula $\chi$ such that
 	\mathfrak{A} \vDash \chi \Leftrightarrow \Psi(\mathfrak{A})\in C
 \end{equation}
 for all $\mathfrak{A} \in \Str[\tau]$.
-In a similar way we define the logics $\mathcal{L}_{\infty \omega}(Q_C)$ 
+In a similar way we define the logics $\mathcal{L}_{\infty \omega}(Q_C)$
 and $\mathcal{L}^{\omega}_{\infty\omega}(Q_C)$.
 We say that $Q_C$ is the \emph{generalized quantifier} corresponding to the
 class $C$, and write $Q_C(\overline{x}_R\psi_R)_{R\in\sigma}$ for the formula
@@ -374,7 +374,7 @@ $\sigma$ in $\tau$.
 Then for each $\mathcal{L}[\sigma]$-formula $\varphi$ there is an
 $\mathcal{L}[\tau]$-formula $\varphi^*$ such that
 \[
-	\mathfrak{A},\overline{a} \vDash \varphi* 
+	\mathfrak{A},\overline{a} \vDash \varphi*
 	\Leftrightarrow \Psi(\mathfrak{A}),\overline{a} \vDash \varphi
 \]
 for all $\mathfrak{A} \in \Str[\tau]$ and tuples $\overline{a}$ of elements in
@@ -472,8 +472,8 @@ The expressive power of $\mathcal{Q}_{\sub}$ is clearly the same as that of
 $\mathcal{Q}_{\emb}$ since the complement $Q^*$ of an embedding-closed quantifier
 $Q$ is substructure-closed and vice versa, so
 \[
-	\mathfrak{A} \vDash Q(\overline{x}_{\alpha}\varphi_{\alpha})_{\alpha < \kappa} 
-	\Leftrightarrow  \mathfrak{A} \vDash 
+	\mathfrak{A} \vDash Q(\overline{x}_{\alpha}\varphi_{\alpha})_{\alpha < \kappa}
+	\Leftrightarrow  \mathfrak{A} \vDash
 	\neg Q^*(\overline{x}_{\alpha}\varphi_{\alpha})_{\alpha < \kappa}.
 \]
 
@@ -501,8 +501,8 @@ which is clearly embedding-closed.
 of a single $n$-ary relation symbol.
 The \emph{Magidor-Malitz} quantifier $Q_{\alpha}^n$, whose defining class is
 \[
-	\{ \mathfrak{A} \in \Str[\sigma_n] \colon 
-	\text{ there is } C \subseteq A \text{ with } |C| \geq \aleph_{\alpha} 
+	\{ \mathfrak{A} \in \Str[\sigma_n] \colon
+	\text{ there is } C \subseteq A \text{ with } |C| \geq \aleph_{\alpha}
 	\text{ and } C^n \subseteq M_n^{\mathfrak{A}}\},
 \]
 is embedding-closed.
@@ -554,10 +554,10 @@ completeness and cofinality of an ordering (Examples \ref{completeness} and
 \begin{remark}
 In addition to being closed under embeddings, we can imagine vari\-ous other
 interesting closure conditions for quantifiers, for example, being closed under
-homomorphisms. 
-The rest of this article will be restricted to the study of 
+homomorphisms.
+The rest of this article will be restricted to the study of
 embedding-closed quantifiers only.
-However, we would like to mention here that it can be shown 
+However, we would like to mention here that it can be shown
 that any embedding-closed property can
 be defined in a logic with only homomorphism-closed quantifiers.
 Thus, requiring quantifiers to be closed under homomorphisms is not essentially
@@ -615,9 +615,9 @@ $n<\omega$.
 Suppose that $t$ is the atomic type of $\overline{a}$ and
 set
 \[
-	P = \{\mathfrak{B} \in \Str[\tau] \colon 
-	\text{for all } \overline{b} \in B^n, 
-	\text{ if } \mathfrak{B} \vDash t(\overline{b}) 
+	P = \{\mathfrak{B} \in \Str[\tau] \colon
+	\text{for all } \overline{b} \in B^n,
+	\text{ if } \mathfrak{B} \vDash t(\overline{b})
 	\text{ then } (\mathfrak{A},\overline{a}) \leq (\mathfrak{B},\overline{b}) \}.
 \]
 Then $\mu(P) = 1$.
@@ -647,7 +647,7 @@ Write $\varphi := Q(\overline{y}_i\psi_i)_{i < k}$, and set
 \begin{align*}
 	\vartheta := \bigvee\{t \colon &t \text{ is an atomic type and }
 	(\mathfrak{A},\overline{a}) \vDash t \land \varphi \\
-	&\text{ for some finite } \tau \text{-structure } \mathfrak{A} 
+	&\text{ for some finite } \tau \text{-structure } \mathfrak{A}
 	\text{ and tuple }\overline{a}\}.
 \end{align*}
 
@@ -719,13 +719,13 @@ Then for each $i<n$ there is a quantifier-free formula $\vartheta_i$ such that
 \]
 for every $\mathfrak{A} \in C$ so
 \[
-	\mathfrak{A} \vDash \forall \overline{x}(\varphi 
+	\mathfrak{A} \vDash \forall \overline{x}(\varphi
 	\leftrightarrow Q(\overline{y}_i\vartheta_i)_{i < n})
 \]
 for all $\mathfrak{A} \in C$.
 Since $Q(\overline{y}_i\vartheta_i)_{i<n} = \psi_m$ for some $m < l$, we have
 \[
-	\mathfrak{A} \vDash \forall \overline{x}(Q(\overline{y}_i\vartheta_i)_{i < n} 
+	\mathfrak{A} \vDash \forall \overline{x}(Q(\overline{y}_i\vartheta_i)_{i < n}
 	\leftrightarrow \chi_m)
 \]
 for all $\mathfrak{A} \in C_m$, and therefore for all $\mathfrak{A} \in C$,
@@ -743,7 +743,7 @@ the logic $\mathcal{L}^{\omega}_{\infty\omega}(\mathcal{Q})$ has a $0$-$1$ law.
 \end{corollary}
 
 
-\section{Quantifier Elimination for $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$ 
+\section{Quantifier Elimination for $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$
 	and \\ some Undefinability Results}\label{chain_section}
 
 In this section we introduce a method that allows us to study the limits of what
@@ -815,7 +815,7 @@ $\mathfrak{A}'\upharpoonright \tau = \mathfrak{A}$ and
 $P^{\mathfrak{A}'} = \{\overline{a}\}$.
 Let $Q$ be the embedding-closed quantifier whose defining class is
 \[
-	K_Q = \{\mathfrak{B} \in \Str[\tau'] \colon \mathfrak{A}' 
+	K_Q = \{\mathfrak{B} \in \Str[\tau'] \colon \mathfrak{A}'
 	\text{ is embeddable into } \mathfrak{B}\},
 \]
 and suppose $\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})[\tau]$
@@ -839,8 +839,8 @@ Now set $\varphi := Q(\overline{x}_R\psi_R)_{R \in \tau_Q}$ and denote by $k$
 the number of free variables of $\varphi$.
 Let
 \[
-	\vartheta = \bigvee\{t \colon 
-	t \text{ is an atomic type and for some } 
+	\vartheta = \bigvee\{t \colon
+	t \text{ is an atomic type and for some }
 	\overline{a} \in A^k, (\mathfrak{A}, \overline{a}) \vDash \varphi \wedge t\}.
 \]
 Let $\overline{b} \in A^k$ and $(\mathfrak{A}, \overline{b}) \vDash \vartheta$.
@@ -859,7 +859,7 @@ $\mathfrak{A} \vDash \forall \overline{x}(\varphi \rightarrow \vartheta)$,
 we have
 $\mathfrak{A} \vDash \forall \overline{x}(\vartheta \leftrightarrow \varphi)$.
 
-Thus, by using induction, we can eliminate quantifiers in all 
+Thus, by using induction, we can eliminate quantifiers in all
 $\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})$.
 \end{proof}
 
@@ -870,7 +870,7 @@ In this subsection, we will consider logics $\mathcal{L}_{\infty\omega}^m$
 (the restriction of $\mathcal{L}_{\infty\omega}$ to formulas that use at most
 $m$ variables) extended with finite number of em\-bed\-ding-closed quantifiers
 of finite width.
-We will show that in a countably infinite chain of interpretations of 
+We will show that in a countably infinite chain of interpretations of
 quasi-homogeneous structures
 of finite relational vocabulary, a formula of such a logic is eventually
 equivalent to a quantifier-free formula.
@@ -926,7 +926,7 @@ Since $\Psi(\mathfrak{A}_j) \leq \Psi(\mathfrak{A}_i)$, $Q$ is embedding-closed
 and all $\chi_i$ are quantifier-free, we have
 $\Psi(\mathfrak{A}_i), \overline{b} \vDash \varphi$.
 However, since $\mathfrak{A}_i$ is quasi-homogeneous,
-there is, by Lemma \ref{interpr} and Theorem \ref{homog}, 
+there is, by Lemma \ref{interpr} and Theorem \ref{homog},
 a quantifier-free $\tau$-formula
 $\varphi^*$ such that
 $\mathfrak{A}_i, \overline{a} \nvDash \varphi^*$
@@ -941,8 +941,8 @@ for which there is a natural number $j$ with
 $k \leq j \leq i$ and $\overline{a} \in A^m_j$ such that
 $\Psi(\mathfrak{A}_j), \overline{a} \vDash t$ and
 $\mathfrak{A}_j, \overline{a} \vDash \bigvee T$.
-The chain $(T'_i)_{k \leq i < \omega}$ is clearly monotone and, 
-since $\sigma$ is finite and relational, 
+The chain $(T'_i)_{k \leq i < \omega}$ is clearly monotone and,
+since $\sigma$ is finite and relational,
 there is a natural number $k'$ at which it reaches its maximum.
 Denote $T' = T'_{k'}$.
 We claim that
@@ -955,9 +955,9 @@ for all $i \geq k'$ and $\overline{a} \in A_i^m$.
 First, suppose we have
 $\Psi(\mathfrak{A}_i), \overline{a} \vDash \bigvee T'$ for some $i \geq k'$
 and $\overline{a} \in A_i^m$.
-Then for some $j$ with $k \leq j \leq k'$ there is $\overline{a} \in A_j^m$ 
+Then for some $j$ with $k \leq j \leq k'$ there is $\overline{a} \in A_j^m$
 such that $\mathfrak{A}_j, \overline{a} \vDash \bigvee T$.
-By (\ref{eq_0}) it follows that 
+By (\ref{eq_0}) it follows that
 $\Psi(\mathfrak{A}_j), \overline{a} \vDash \varphi$
 and, since $\Psi(\mathfrak{A}_j) \leq \Psi(\mathfrak{A}_i)$, we have
 $\Psi(\mathfrak{A}_i), \overline{a} \vDash \varphi$ and thus
@@ -1139,7 +1139,7 @@ Then $\mathfrak{A}_i \leq\mathfrak{A}_{i+1}$ for all $i<\omega$, and
 $|U^{\mathfrak{A}_i}|=|V^{\mathfrak{A}_i}|$ if and only if $i$ is odd.
 Thus, it follows from Corollary \ref{finite2} that the class
 \[
-	\{\mathfrak{A} \in \Str[\tau] : 
+	\{\mathfrak{A} \in \Str[\tau] :
 	\mathfrak{A} \text{ is finite and }|U^{\mathfrak{A}}| = |V^{\mathfrak{A}}| \}
 \]
 is not definable in the logic $\mathcal{L}^{\omega}_{\infty \omega}(\mathcal{Q})$.
@@ -1187,7 +1187,7 @@ $\mathfrak{A}$, $\mathfrak{B} \in C$ such that $\mathfrak{A} < \mathfrak{B}$.
 
 \begin{corollary}\label{shrinking_interpr}
 Let $\tau$ and $\sigma$ be finite relational vocabularies and
-$(\Psi, (\psi_R)_{R \in \sigma})$ an 
+$(\Psi, (\psi_R)_{R \in \sigma})$ an
 $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of $\sigma$ in
 $\tau$.
 Let $\mathcal{H}$ be the class of all finite homogeneous $\tau$-structures and
@@ -1202,12 +1202,12 @@ Assume to the contrary that there is a countably infinite antichain
 	\Psi(\mathfrak{A}_0),\ \Psi(\mathfrak{A}_1),\ \dots
 \]
 with all $\mathfrak{A}_i \in \mathcal{H}$.
-There are natural numbers $i_0$, $i_1$, $\dots$ such that 
+There are natural numbers $i_0$, $i_1$, $\dots$ such that
 $\mathfrak{A}_{i_j} \leq \mathfrak{A}_{i_{j + 1}}$ for all $j < \omega$
-because otherwise we would be able to construct an infinite antichain of 
+because otherwise we would be able to construct an infinite antichain of
 homogeneous structures which contradicts Lemma \ref{shrinking}.
 By Corollary \ref{finite2}, since $\sigma$ is finite, there is $k < \omega$
-such that 
+such that
 \[
 	\mathfrak{A}_k, \overline{a} \vDash \psi_R \Leftrightarrow
 	\mathfrak{A}_{k + 1}, \overline{a} \vDash \psi_R
@@ -1243,7 +1243,7 @@ $\mathfrak{A} \vDash \varphi \Leftrightarrow \mathfrak{B} \vDash \varphi$.
 
 \begin{lemma}\label{stabil}
 Let $\tau$ and $\sigma$ be finite relational vocabularies and
-$(\Psi, (\psi_R)_{R \in \sigma})$ an 
+$(\Psi, (\psi_R)_{R \in \sigma})$ an
 $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of $\sigma$ in
 $\tau$.
 Suppose $\mathcal{Q}$ is a finite set of embedding-closed quantifiers of finite width
@@ -1259,12 +1259,12 @@ stabilizes $\varphi$ in $\Psi(\mathcal{K})$.
 Assume to the contrary that there is no such structure.
 Then there is a function $F : \mathcal{K} \rightarrow \mathcal{K}$ such that
 $\Psi(\mathfrak{A}) \leq \Psi(F(\mathfrak{A}))$ and
-$\Psi(\mathfrak{A}) \vDash\varphi \nLeftrightarrow \Psi(F(\mathfrak{A})) \vDash \varphi$ 
+$\Psi(\mathfrak{A}) \vDash\varphi \nLeftrightarrow \Psi(F(\mathfrak{A})) \vDash \varphi$
 for all $\mathfrak{A} \in \mathcal{K}$.
 Now let $\mathfrak{A}_0 \in \mathcal{K}$ and define
 $\mathfrak{A}_{k+1} = F(\mathfrak{A}_k)$.
 Then $(\Psi(\mathfrak{A}_i))_{i<\omega}$ is a chain, with all $\mathfrak{A}_i$
-being quasi-homogeneous, that does not stabilize $\varphi$ which contradicts 
+being quasi-homogeneous, that does not stabilize $\varphi$ which contradicts
 Theorem \ref{finite}.
 \end{proof}
 
@@ -1277,19 +1277,19 @@ $\mathcal{K}$ if $\varphi$ defines $\mathcal{K} \setminus S$ for some finite
 
 \begin{theorem}\label{log_eq}
 Let $\tau$ and $\sigma$ be finite relational vocabularies,
-$(\Psi, (\psi_R)_{R \in \sigma})$ an 
+$(\Psi, (\psi_R)_{R \in \sigma})$ an
 $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of $\sigma$ in
 $\tau$ and
 \[
-\mathcal{H} = \{\Psi(\mathfrak{A}) 
+\mathcal{H} = \{\Psi(\mathfrak{A})
 \colon \mathfrak{A} \text{ is a finite homogeneous } \tau \text{-structure}\}.
 \]
 Suppose that $\mathcal{Q}$ is a finite set
-of embedding-closed quantifiers of finite width, 
+of embedding-closed quantifiers of finite width,
 and $\mathcal{K} \subseteq \mathcal{H}$
 is a class that is definable over $\mathcal{H}$ by an
 $\mathcal{L}^{\omega}_{\infty\omega}(\mathcal{Q})$-sentence $\varphi$.
-Then $\mathcal{K}$ is nearly definable by an existential 
+Then $\mathcal{K}$ is nearly definable by an existential
 $\mathcal{L}_{\omega\omega}$-sentence.
 \end{theorem}
 \begin{proof}
@@ -1306,7 +1306,7 @@ Now for all $i < \omega$ we define sets $\mathcal{H}_i \subseteq \mathcal{H}$
 and $\tau$-structures $\mathfrak{A}_i$ by setting $\mathcal{H}_0 = \mathcal{H}'$,
 $\mathfrak{A}_i = F(\mathcal{H}_i)$ and
 \[
-	\mathcal{H}_{i+1} = \mathcal{H}_i \setminus \{ \mathfrak{B} \in \mathcal{H} \colon 
+	\mathcal{H}_{i+1} = \mathcal{H}_i \setminus \{ \mathfrak{B} \in \mathcal{H} \colon
 	\mathfrak{B} \leq \mathfrak{A}_i \text{ or } \mathfrak{A}_i \leq \mathfrak{B} \}.
 \]
 Note that $\mathcal{H}_i \subseteq \mathcal{H}_j$ when $i \geq j$.
@@ -1324,7 +1324,7 @@ Thus, $\{\mathfrak{A}_i\colon i\in I \}$ is an antichain whose cardinality is
 finite by Lemma \ref{shrinking}, and we have
 $\mathcal{H} = \mathcal{G}_0 \cup \mathcal{G}_1$ where
 \[
-	\mathcal{G}_0 = \{\mathfrak{B}\in\mathcal{H} \colon 
+	\mathcal{G}_0 = \{\mathfrak{B}\in\mathcal{H} \colon
 	\mathfrak{B} \lneq \mathfrak{A}_i \text{ for some } i \in I \}
 \]
 is finite up to isomorphism,
@@ -1342,18 +1342,18 @@ and all $\vartheta_i$ are existential $\mathcal{L}_{\omega \omega}$-sentences
 for which $\mathfrak{A}_i \vDash \vartheta_i$ if and only if
 $\mathfrak{A}_i \leq \mathfrak{A}$.
 
-We claim that $\psi$ defines $\mathcal{K} \setminus \mathcal{G}_0$ over 
+We claim that $\psi$ defines $\mathcal{K} \setminus \mathcal{G}_0$ over
 $\mathcal{H}$.
 To show this, let $\mathfrak{A} \in \mathcal{H}$ be such that
 $\mathfrak{A} \vDash \psi$.
 Then for some $\mathfrak{A}_i$ we have $\mathfrak{A}_i \leq \mathfrak{A}$ and
 $\mathfrak{A}_i \vDash \varphi$.
 Furthermore, since $\mathfrak{A}_i$ stabilizes $\varphi$ in $\mathcal{H}$, we
-have $\mathfrak{A} \vDash \varphi$, and therefore 
+have $\mathfrak{A} \vDash \varphi$, and therefore
 $\mathfrak{A} \in \mathcal{K}$.
 In addition, it is easy to see that $\mathfrak{A} \notin \mathcal{G}_0$ so
 $\mathfrak{A} \in \mathcal{K} \setminus \mathcal{G}_0$.
-For the other direction, if 
+For the other direction, if
 $\mathfrak{A} \in \mathcal{K} \setminus \mathcal{G}_0$,
 then $\mathfrak{A} \vDash \varphi$ and, by our earlier observation, we have
 $\mathfrak{A} \vDash \psi$.
@@ -1363,11 +1363,11 @@ definable by an existential $\mathcal{L}_{\omega\omega}$-sentence.
 
 \begin{corollary}
 Let $\tau$ and $\sigma$ be finite relational vocabularies,
-$(\Psi, (\psi_R)_{R \in \sigma})$ an 
+$(\Psi, (\psi_R)_{R \in \sigma})$ an
 $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of $\sigma$ in
 $\tau$ and
 \[
-\mathcal{H} = \{\Psi(\mathfrak{A}) 
+\mathcal{H} = \{\Psi(\mathfrak{A})
 \colon \mathfrak{A} \text{ is a finite homogeneous } \tau \text{-structure}\}.
 \]
 Suppose that $\mathcal{Q}$ is a finite set of embedding-closed quantifiers of
@@ -1383,12 +1383,12 @@ $\mathcal{L}_{\omega\omega}$-sentence $\psi$ and a class
 $S \subseteq \mathcal{H}$ such that $S$ is finite up to isomorphism and for all
 $\mathfrak{A} \in \mathcal{H}$ we have
 \[
-	\mathfrak{A} \vDash \psi 
+	\mathfrak{A} \vDash \psi
 	\Leftrightarrow \mathfrak{A} \vDash \varphi \text{ and } \mathfrak{A} \notin S,
 \]
 from which it follows that for all $\mathfrak{A} \in \mathcal{H}$ we have
 \[
-	\mathfrak{A} \vDash \psi \vee \bigvee_{\mathfrak{B} \in S} \chi_{\mathfrak{B}} 
+	\mathfrak{A} \vDash \psi \vee \bigvee_{\mathfrak{B} \in S} \chi_{\mathfrak{B}}
 	\Leftrightarrow \mathfrak{A} \vDash \varphi,
 \]
 where each $\chi_{\mathfrak{B}}$ is a $\Sigma_2^0$ sentence of
@@ -1407,8 +1407,8 @@ It is possible to generalize Theorem \ref{finite} to vocabularies and sets of
 embedding-closed quantifiers of arbitrary cardinality.
 
 \begin{theorem}\label{infinite}
-Let $\tau$ and $\sigma$ be relational vocabularies, $\kappa$ a cardinal, 
-$\mathcal{Q}$ a set of embedding-closed quantifiers of width less than $\kappa$, 
+Let $\tau$ and $\sigma$ be relational vocabularies, $\kappa$ a cardinal,
+$\mathcal{Q}$ a set of embedding-closed quantifiers of width less than $\kappa$,
 and $\lambda$ a regular cardinal such that
 \[
 	2^{(|\tau| + |\sigma|) \cdot \aleph_0} \cdot |\mathcal{Q}|^{\kappa} < \lambda.
@@ -1416,19 +1416,19 @@ and $\lambda$ a regular cardinal such that
 Let $(\Psi, (\psi_R)_{R \in \sigma})$ be an
 $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$-interpretation of
 $\sigma$ in $\tau$, and $(\Psi(\mathfrak{A}_{\alpha}))_{\alpha < \lambda}$
-a chain in which all $\mathfrak{A}_{\alpha}$ are quasi-homogeneous 
+a chain in which all $\mathfrak{A}_{\alpha}$ are quasi-homogeneous
 $\tau$-structures.
 There is a cardinal $\mu<\lambda$ such that for every formula
-$\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q})[\sigma]$ 
+$\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q})[\sigma]$
 there is a quantifier-free
 $\sigma$-formula $\vartheta_{\varphi}$ such that
 \[
-	\mathfrak{A}_{\alpha} \vDash \forall \overline{x}(\varphi 
+	\mathfrak{A}_{\alpha} \vDash \forall \overline{x}(\varphi
 	\leftrightarrow \vartheta_{\varphi})
 \]
 for all $\alpha \geq \mu$.
 In particular,
-$\mathfrak{A}_{\alpha} \preceq_{\mathcal{L}_{\infty\omega}(\mathcal{Q})} 
+$\mathfrak{A}_{\alpha} \preceq_{\mathcal{L}_{\infty\omega}(\mathcal{Q})}
 \mathfrak{A}_{\beta}$
 for all $\alpha$, $\beta$ with $\mu \leq \alpha \leq \beta < \lambda$.
 \end{theorem}
@@ -1439,17 +1439,17 @@ In the first part of this proof, we will generalize the proof of Lemma
 \ref{quant_elim_finite_lemma} so it works for chains of quasi-homogeneous
 structures of arbitrary length.
 
-For each $\alpha < \lambda$, let $T_{\alpha}$ be the set of all atomic 
+For each $\alpha < \lambda$, let $T_{\alpha}$ be the set of all atomic
 types of $\tau$ such that $\mathfrak{A}_{\alpha}, \overline{a} \vDash t$
-and $\Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \varphi$ 
+and $\Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \varphi$
 for some $\overline{a}$.
 Since there are at most $2^{|\tau|+\aleph_0}$ atomic types of $\tau$,
 and $\lambda$ is a regular cardinal greater than $2^{|\tau|+\aleph_0}$,
-there is a cardinal $\kappa_{\varphi} < \lambda$ at which the chain 
+there is a cardinal $\kappa_{\varphi} < \lambda$ at which the chain
 $(T_{\alpha})_{\alpha < \lambda}$ reaches its maximum.
-We can show in the same way as in the proof of 
-Lemma \ref{quant_elim_finite_lemma} that for all 
-$\alpha \geq \kappa_{\varphi}$ and 
+We can show in the same way as in the proof of
+Lemma \ref{quant_elim_finite_lemma} that for all
+$\alpha \geq \kappa_{\varphi}$ and
 $\overline{a} \in A^{\frvar(\varphi)}$ we then have
 \[
 	\mathfrak{A}_{\alpha}, \overline{a} \vDash \bigvee T_{\kappa_{\varphi}}
@@ -1458,7 +1458,7 @@ $\overline{a} \in A^{\frvar(\varphi)}$ we then have
 \]
 
 For each $\alpha \geq \kappa_{\varphi}$, $\alpha < \lambda$, let $T_{\alpha}'$
-be the set of all atomic types $t$ of $\sigma$ such that there is a cardinal 
+be the set of all atomic types $t$ of $\sigma$ such that there is a cardinal
 $\beta$, $\kappa_{\varphi} \leq \beta \leq \alpha$, and
 $\overline{a} \in A^{\frvar(\varphi)}_{\beta}$
 for which
@@ -1469,7 +1469,7 @@ its maximum at some cardinal $\mu_{\varphi} < \lambda$ that exists since
 there are at most $2^{|\sigma| + \aleph_0}$ atomic types of $\sigma$
 and $\lambda$ is a regular cardinal greater than this number.
 Again, as in Lemma \ref{quant_elim_finite_lemma}, we can show that for all
-$\alpha \geq \mu_{\varphi}$ and 
+$\alpha \geq \mu_{\varphi}$ and
 $\overline{a} \in A^{\frvar(\varphi)}_{\alpha}$ we have
 \[
 	\Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \bigvee T_{\mu_{\varphi}}'
@@ -1480,12 +1480,12 @@ and further
 	\Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \bigvee T_{\mu_{\varphi}}'
 	\Leftrightarrow \Psi(\mathfrak{A}_{\alpha}), \overline{a} \vDash \varphi.
 \]
-Thus, for every formula $\varphi$ of the form 
+Thus, for every formula $\varphi$ of the form
 $Q(\overline{x}_i \vartheta_i)_{i < \delta}$ with all $\vartheta_i$
-quantifier-free there is a cardinal $\mu_{\varphi} < \lambda$ and a 
+quantifier-free there is a cardinal $\mu_{\varphi} < \lambda$ and a
 quantifier-free formula $\vartheta_{\varphi}$ such that
 \[
-	\Psi(\mathfrak{A}_{\alpha}) \vDash 
+	\Psi(\mathfrak{A}_{\alpha}) \vDash
 	\forall \overline{x}(\varphi \leftrightarrow \vartheta_{\varphi})
 \]
 for all $\alpha \geq \mu_{\varphi}$, $\alpha < \lambda$.
@@ -1493,7 +1493,7 @@ for all $\alpha \geq \mu_{\varphi}$, $\alpha < \lambda$.
 Let $\Phi$ be the set of all $\sigma$-formulas of the form
 $Q(\overline{x}_i\vartheta_i)_{i<\delta}$,
 with $Q\in\mathcal{Q}$ and all $\vartheta_i$ quantifier-free.
-Then 
+Then
 $|\Phi| \leq 2^{(|\sigma| + |\tau|) \cdot \aleph_0} \cdot |\mathcal{Q}|^{\kappa}$.
 We claim that we can set
 $\mu := \sup\{\mu_{\varphi} \colon \varphi \in \Phi \}$.
@@ -1501,11 +1501,11 @@ Note that $\mu < \lambda$.
 We use induction on the structure of the formula to prove this claim.
 If $\varphi$ is atomic there is nothing to prove.
 If $\varphi = \bigwedge_{i \in I} \varphi_i$ and the claim holds for all
-$\varphi_i$, then 
+$\varphi_i$, then
 $\vartheta_{\varphi} = \bigwedge_{i\in I}\vartheta_{\varphi_i}$.
 If $\varphi = \neg \varphi'$ and the claim is true for $\varphi'$,
 then $\vartheta_{\varphi} = \neg \vartheta_{\varphi'}$.
-Finally, suppose that $\varphi = Q(\overline{x}_i \varphi_i)_{i < \delta}$ 
+Finally, suppose that $\varphi = Q(\overline{x}_i \varphi_i)_{i < \delta}$
 and the claim holds for all $\varphi_i$.
 Then each $\varphi_i$ is equivalent to a quantifier-free formula $\vartheta_i$
 on structures $\mathfrak{A}_{\alpha}$ with $\alpha \geq \mu$ so by the first part
@@ -1526,9 +1526,9 @@ $\tau$-structures, then $\mathfrak{A} \equiv_{\emb} \mathfrak{B}$.
 \begin{proof}
 We can build a chain of arbitrary length in which structures $\mathfrak{A}$ and
 $\mathfrak{B}$ alternate.
-By Theorem \ref{infinite} the truth value of any sentence 
-$\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})$ 
-is eventually preserved in this chain, so 
+By Theorem \ref{infinite} the truth value of any sentence
+$\varphi \in \mathcal{L}_{\infty\omega}(\mathcal{Q}_{\emb})$
+is eventually preserved in this chain, so
 $\mathfrak{A} \vDash \varphi \Leftrightarrow \mathfrak{B} \vDash \varphi$.
 \end{proof}
 
@@ -1642,7 +1642,7 @@ we define inductively its \emph{quantifier rank} denoted by $\qr(\varphi)$ by se
 	\qr(\varphi) &= 0 \text{ if } \varphi \text{ is quantifier-free}, \\
 	\qr(\neg\varphi) &= \qr(\varphi), \\
 	\qr(\bigvee\Phi) &= \qr(\bigwedge\Phi) = \sup\{\qr(\varphi) \colon \varphi \in \Phi\}, \\
-	\qr(Q(\overline{x}_{\delta}\varphi_{\delta})_{\delta<\kappa}) 
+	\qr(Q(\overline{x}_{\delta}\varphi_{\delta})_{\delta<\kappa})
 	&= \sup\{\qr(\varphi_{\delta}) \colon \delta < \kappa \} + 1.
 \end{align*}
 We write $\mathfrak{A} \simeq^{\gamma}_{\emb} \mathfrak{B}$ if Duplicator wins
@@ -1691,7 +1691,7 @@ positions explicitly.
 \begin{theorem}\label{game}
 	Let $\tau$ be vocabulary and $\mathfrak{A}$, $\mathfrak{B}$ $\tau$-structures.
 	For all ordinals $\gamma < \omega_1$ we have $
-	\mathfrak{A} \simeq_{\emb}^{\gamma} \mathfrak{B} \text{ if and only if } 
+	\mathfrak{A} \simeq_{\emb}^{\gamma} \mathfrak{B} \text{ if and only if }
 	\mathfrak{A} \equiv_{\emb}^{\gamma} \mathfrak{B}$.
 \end{theorem}
 \begin{proof}
@@ -1722,14 +1722,14 @@ Thus, by the induction hypothesis,
 $(\mathfrak{A},\overline{a})\equiv^{\alpha}_{\emb}(\mathfrak{B},f\overline{a})$
 for all $\alpha<\gamma$ so
 \[
-	\mathfrak{A} \vDash \psi_{\delta}(\overline{a}) \Leftrightarrow 
+	\mathfrak{A} \vDash \psi_{\delta}(\overline{a}) \Leftrightarrow
 	\mathfrak{B} \vDash \psi_{\delta}(f\overline{a})
 \]
 for all $\delta<\kappa$ since $\qr(\psi_{\delta}) < \gamma$ by the definition of
 quantifier rank and the fact that $\qr(\varphi) \leq \gamma$.
 This means that $f$ is an embedding
 \[
-	(A, (\psi_{\delta}^{\mathfrak{A}})_{\delta < \kappa}) \rightarrow 
+	(A, (\psi_{\delta}^{\mathfrak{A}})_{\delta < \kappa}) \rightarrow
 	(B, (\psi_{\delta}^{\mathfrak{B}})_{\delta < \kappa}),
 \]
 so $\mathfrak{B} \vDash Q(\overline{x}_{\delta} \psi_{\delta})_{\delta < \kappa}$
@@ -1754,9 +1754,9 @@ for some $\alpha < \gamma$.
 Thus, by the induction hypothesis, for each pair of embeddings $(f,g)$ there is
 a formula $\psi_f$ or a formula $\psi_g$ of quantifier rank $< \gamma$, such that
 \begin{align*}
-	(*)\ &\mathfrak{A} \vDash \psi_f(\overline{a}) \nLeftrightarrow 
+	(*)\ &\mathfrak{A} \vDash \psi_f(\overline{a}) \nLeftrightarrow
 	\mathfrak{B} \vDash \psi_f(f\overline{a}) \text{ or } \\
-	&\mathfrak{A} \vDash \psi_g(g\overline{b}) \nLeftrightarrow 
+	&\mathfrak{A} \vDash \psi_g(g\overline{b}) \nLeftrightarrow
 	\mathfrak{B} \vDash \psi_g(\overline{b})
 \end{align*}
 for some $\overline{a} \in A^{<\omega}$ or $\overline{b} \in B^{<\omega}$.
@@ -1771,16 +1771,16 @@ $\mathfrak{B} \vDash Q_A(\overline{x}_h \psi_h)_{h \in \mathcal{F}_A}$ and
 $\mathfrak{A} \vDash Q_B(\overline{x}_h \psi_h)_{h \in \mathcal{F}_B}$.
 Then there are embeddings
 \begin{align*}
-	f \colon (A,(\psi_h^{\mathfrak{A}})_{h \in \mathcal{F}_A}) &\rightarrow 
+	f \colon (A,(\psi_h^{\mathfrak{A}})_{h \in \mathcal{F}_A}) &\rightarrow
 	(B,(\psi_h^{\mathfrak{B}})_{h \in \mathcal{F}_A}) \text{ and} \\
 	g \colon (B,(\psi_h^{\mathfrak{B}})_{h \in \mathcal{F}_B}) &\rightarrow
 	(A,(\psi_h^{\mathfrak{A}})_{h \in \mathcal{F}_B}),
 \end{align*}
 so there are embeddings $f$ and $g$ such that
 \begin{align*}
-	\mathfrak{A} \vDash \psi_f(\overline{a}) &\Leftrightarrow 
+	\mathfrak{A} \vDash \psi_f(\overline{a}) &\Leftrightarrow
 	\mathfrak{B} \vDash \psi_f(f\overline{a}) \text{ and }\\
-	\mathfrak{A} \vDash \psi_g(g\overline{b}) &\Leftrightarrow 
+	\mathfrak{A} \vDash \psi_g(g\overline{b}) &\Leftrightarrow
 	\mathfrak{B} \vDash \psi_g(\overline{b})
 \end{align*}
 for all $\overline{a}$ and $\overline{b}$, which contradicts $(*)$.
@@ -1791,8 +1791,8 @@ which completes the induction step.
 
 \begin{corollary}
 Let $\tau$ be vocabulary and $\mathfrak{A}$, $\mathfrak{B}$ $\tau$-structures.
-Then we have 
-$\mathfrak{A} \simeq_{\emb} \mathfrak{B} \text{ if and only if } 
+Then we have
+$\mathfrak{A} \simeq_{\emb} \mathfrak{B} \text{ if and only if }
 \mathfrak{A} \equiv_{\emb} \mathfrak{B}$.
 \end{corollary}
 
@@ -1854,11 +1854,11 @@ $\mathfrak{B} = \mathfrak{A}_0 \cup \mathfrak{A}_1$ if and only if
 $\mathfrak{B}$ is a $\tau_0 \cup \tau_1$-structure such that
 \begin{align*}
 	B &= A_0 \cup A_1, \\
-	R^{\mathfrak{B}} &= R^{\mathfrak{A}_0} \cup R^{\mathfrak{A}_1} 
+	R^{\mathfrak{B}} &= R^{\mathfrak{A}_0} \cup R^{\mathfrak{A}_1}
 	\text{ for all } R \in \tau_0 \cap \tau_1, \\
-	R^{\mathfrak{B}} &= R^{\mathfrak{A}_0} 
+	R^{\mathfrak{B}} &= R^{\mathfrak{A}_0}
 	\text{ for all } R \in \tau_0 \setminus \tau_1,\\
-	R^{\mathfrak{B}} &= R^{\mathfrak{A}_1} 
+	R^{\mathfrak{B}} &= R^{\mathfrak{A}_1}
 	\text{ for all } R \in \tau_1 \setminus \tau_0.
 \end{align*}
 \end{definition}
@@ -1888,16 +1888,16 @@ Note that
 $\eta_i^{\mathfrak{A}} = (\mathfrak{A} \upharpoonright \{\leq\}) | P_i^{\mathfrak{A}}$.
 Finally we set
 \[
-	S_1 = \{\mathfrak{A}\in R_1 \colon 
-	E_1^{\mathfrak{A}} \text{ is an isomorphism between } 
+	S_1 = \{\mathfrak{A}\in R_1 \colon
+	E_1^{\mathfrak{A}} \text{ is an isomorphism between }
 	\eta^{\mathfrak{A}}_1 \text{ and } \eta^{\mathfrak{A}}_0 \}
 \]
 and
 \begin{align*}
-	T_1 = \{\mathfrak{B}\in R_1 \colon 
-	&\ \text{There is } a \in P^{\mathfrak{B}}_1 
-	\text{ and an isomorphism } h \text{ between }\\ &\ 
-	\eta^{\mathfrak{B}}_1 \text{ and }\eta^{\mathfrak{B}}_0 
+	T_1 = \{\mathfrak{B}\in R_1 \colon
+	&\ \text{There is } a \in P^{\mathfrak{B}}_1
+	\text{ and an isomorphism } h \text{ between }\\ &\
+	\eta^{\mathfrak{B}}_1 \text{ and }\eta^{\mathfrak{B}}_0
 	\text{ such that } E_1^{\mathfrak{B}} = h \setminus \{(a,h(a))\}.
 \end{align*}
 
@@ -1908,17 +1908,17 @@ and
 	\label{fig1}
 \end{figure}
 
-$\textbf{n > 1:}$ We define class $R_n \subset \Str[\tau_n]$ by setting 
-$\mathfrak{A} \in R_n$ if and only if there is 
-$\mathfrak{B} \in \Str[\{\leq\}]$ isomorphic to $\eta$ and structures 
+$\textbf{n > 1:}$ We define class $R_n \subset \Str[\tau_n]$ by setting
+$\mathfrak{A} \in R_n$ if and only if there is
+$\mathfrak{B} \in \Str[\{\leq\}]$ isomorphic to $\eta$ and structures
 $\mathfrak{M}_a \in \Str[\tau_{n-1}]$ for each $a \in B$ such that
 \[
-	\mathfrak{A} \upharpoonright \tau_{n-1}  = 
+	\mathfrak{A} \upharpoonright \tau_{n-1}  =
 	\mathfrak{B} \cup \bigcup_{a \in B}\mathfrak{M}_a,
 \]
 $P_n^{\mathfrak{A}} = B$, and
 \[
-	E_n^{\mathfrak{A}} = \{(x,y) \in A^2 \colon 
+	E_n^{\mathfrak{A}} = \{(x,y) \in A^2 \colon
 	x \in P_n^{\mathfrak{A}} \text{ and } y \in M_x \}.
 \]
 Then we define classes $S_n$, $T_n$ by setting $\mathfrak{A} \in S_n$ if and only
@@ -2006,7 +2006,7 @@ Let $a_0,\dots,a_k \in A$. We must find partitions satisfying conditions 1-5.
 For this, let $b, c \in A$ be such that
 \begin{align*}
 	\mathfrak{A} \vDash &P_1(b) \wedge P_0(c) \wedge E_1(b,c) \wedge \\
-	&\bigwedge_{i\leq k}\big(\big(P_1(a_i) \rightarrow 
+	&\bigwedge_{i\leq k}\big(\big(P_1(a_i) \rightarrow
 	a_i<b\big) \wedge \big(P_0(a_i)\rightarrow a_i < c\big)\big).
 \end{align*}
 Now set $A_1 = \{x \in A \colon x \leq b \text{ or } x \leq c \}$, $B_1 = f[A_1]$,
@@ -2191,18 +2191,18 @@ in abstract logics.
 \section{Open questions}
 The notion of quasi-homogeneity introduced in this article does not seem to
 appear in the literature.
-Studying it in more depth could be one possible direction for the further 
+Studying it in more depth could be one possible direction for the further
 research since at the moment our knowledge about it is quite limited.
-For instance, we know that homogeneity and quasi-homogeneity coincide over 
+For instance, we know that homogeneity and quasi-homogeneity coincide over
 countable structures
-but how much they really differ over uncountable structures is a question 
+but how much they really differ over uncountable structures is a question
 that we leave open.
 
 We also leave open the question asked by the referee about a
 converse to Theorems \ref{finite} and \ref{infinite}.
 Given a chain of structures, does having every formula of
 $\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$
-eventually equivalent to some fixed quantifier-free formula in this chain 
+eventually equivalent to some fixed quantifier-free formula in this chain
 imply that it eventually consists only of structures that are interpretations
 of quasi-homogeneous structures for some fixed interpretation?
 
