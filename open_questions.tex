@@ -1,0 +1,51 @@
+\documentclass{ndjflart}
+%%% HIGHLY RECOMMENDED PACKAGES AND SETTINGS
+%\usepackage{pdfsync}  %% if you know what this is use it or not.
+\usepackage[T1]{fontenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% If your tex system is less than 2 years old (in 2012) the following
+%% font options are available. If not comment them out.
+\usepackage{tgtermes}
+%       otherwise use alternative journal fonts
+%\renewcommand{\rmdefault}{ptm} % system default Times font
+\usepackage{mathptmx}
+%%%     additional fonts
+\usepackage[scaled=.92]{helvet}
+%\setoptfont{enc={T1},fam={pop}} % if You have Optima font, uncomment this line
+%%% MATH
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{mathrsfs}
+%%% BIBLIOGRAPHY
+\usepackage[numbers]{natbib}  %% numbers is required.
+%%% LINKS
+\usepackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}  %%check
+
+\usepackage{enumerate}
+
+\artstatus{am} %%% leave this alone!!  That means you, too!!
+
+\startlocaldefs
+\DeclareMathOperator{\emb}{emb}
+\endlocaldefs
+
+\begin{document}
+
+\section{Open questions}
+The notion of quasi-homogeneity introduced in this article does not seem to
+appear in the literature.
+Studying it in more depth may be a worthwhile direction for further
+research since currently our knowledge of it is very limited.
+For instance, we know that homogeneity and quasi-homogeneity coincide over
+countable structures
+but how much they really differ over uncountable structures is a question
+that we leave open.
+
+We also leave open the question asked by the referee about a
+converse to Theorems 5.5 and 5.20.
+Given a chain of structures, does having every formula of
+$\mathcal{L}_{\infty \omega}(\mathcal{Q}_{\emb})$
+eventually equivalent to some fixed quantifier-free formula in this chain
+imply that it eventually consists only of structures that are interpretations
+of quasi-homogeneous structures for some fixed interpretation?
+
+\end{document}
